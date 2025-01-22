@@ -62,4 +62,4 @@ Bash:
  pixi run jupyter lab
 ```
 
-Of selecteer de juiste python instantie: `.pixi\envs\default\python.exe` in je ontwikkelomgeving. 
+Of selecteer de juiste Python-instantie: `.pixi\envs\default\python.exe` in je ontwikkelomgeving. 
