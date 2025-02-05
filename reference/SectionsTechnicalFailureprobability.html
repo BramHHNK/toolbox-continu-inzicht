@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>base.config – Toolbox continu inzicht</title>
+<title>sectionstechnicalfailureprobability – Toolbox continu inzicht</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -35,10 +69,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e212f1f3c46809d555a1335ea96b499f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -92,16 +126,39 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Achtergrond</span></a>
+    <a class="nav-link" href="../install.html"> 
+<span class="menu-text">Installeren</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-voorbeelden" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Voorbeelden</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-voorbeelden">    
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/1.proof_of_concept.html">
+ <span class="dropdown-text">Voorbeelden</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/2.belastingen_inladen.html">
+ <span class="dropdown-text">Belastingen inladen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/3.fragility_curve_overtopping.html">
+ <span class="dropdown-text">Fragility Curve Overtopping</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../modules_index.html"> 
+<span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../reference/index.html"> 
-<span class="menu-text">Python documentatie</span></a>
+<span class="menu-text">Python API</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../examples/notebooks/proof_of_concept.html"> 
-<span class="menu-text">Voorbeelden</span></a>
+    <a class="nav-link" href="../contact.html"> 
+<span class="menu-text">Overig</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -130,74 +187,64 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#toolbox_continu_inzicht.base.config" id="toc-toolbox_continu_inzicht.base.config" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.base.config">base.config</a>
+  <li><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability" id="toc-toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability">SectionsTechnicalFailureprobability</a>
   <ul class="collapse">
-  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes">Classes</a>
+  <li><a href="#input-schemas" id="toc-input-schemas" class="nav-link" data-scroll-target="#input-schemas">Input schema’s</a></li>
+  <li><a href="#output-schema" id="toc-output-schema" class="nav-link" data-scroll-target="#output-schema">Output schema</a></li>
+  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
-  <li><a href="#toolbox_continu_inzicht.base.config.Config" id="toc-toolbox_continu_inzicht.base.config.Config" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.config.Config">Config</a></li>
+  <li><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.run" id="toc-toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.run" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.run">run</a></li>
   </ul></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="toolbox_continu_inzicht.base.config" class="level1">
-<h1>base.config</h1>
-<p><code>base.config</code></p>
-<section id="classes" class="level2">
-<h2 class="anchored" data-anchor-id="classes">Classes</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.config.Config">Config</a></td>
-<td>Basis functie om de configuratie in te laden.</td>
-</tr>
-</tbody>
-</table>
-<section id="toolbox_continu_inzicht.base.config.Config" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.config.Config">Config</h3>
-<p><code>base.config.Config()</code></p>
-<p>Basis functie om de configuratie in te laden.</p>
-<section id="parameters" class="level4">
-<h4 class="anchored" data-anchor-id="parameters">Parameters</h4>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 6%">
-<col style="width: 73%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>config_path</code></td>
-<td></td>
-<td>Pad naar een <code>.yaml</code> bestand waarin per functie staat beschreven wat de in/ouput bestanden zijn</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
-</table>
+<section id="toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability" class="level1">
+<h1>SectionsTechnicalFailureprobability</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sections.SectionsTechnicalFailureprobability()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bepaal de technische faalkans van een dijkvak</p>
+<section id="input-schemas" class="level2">
+<h2 class="anchored" data-anchor-id="input-schemas">Input schema’s</h2>
+<p>**input_schema_fragility_curves (DataFrame): schema voor fragility curves voor de dijkvak</p>
+<ul>
+<li>section_id: int64 : id van het dijkvak</li>
+<li>failuremechanism: str : code van het faalmechanisme</li>
+<li>hydraulicload: float64 : belasting</li>
+<li>failureprobability: float64 : faalkans</li>
+</ul>
+<p>**df_in_section_loads (DataFrame): schema voor tijdreeks met belasting op de dijkvak</p>
+<ul>
+<li>section_id: int64 : id van het dijkvak</li>
+<li>parameter_id: int64 : id van de belastingparameter (1,2,3,4)</li>
+<li>unit: str : eenheid van de belastingparameter</li>
+<li>date_time: datetime64[ns, UTC] : datum/ tijd van de tijdreeksitem</li>
+<li>value: float64 : belasting van de tijdreeksitem</li>
+<li>value_type: str : type waarde van de tijdreeksitem (meting of verwacht)</li>
+</ul>
 </section>
-<section id="attributes" class="level4">
-<h4 class="anchored" data-anchor-id="attributes">Attributes</h4>
+<section id="output-schema" class="level2">
+<h2 class="anchored" data-anchor-id="output-schema">Output schema</h2>
+<p>**df_out (DataFrame): uitvoer</p>
+<ul>
+<li>section_id: int64 : id van het dijkvak</li>
+<li>parameter_id: int64 : id van de faalkans parameter (5,100,101,102)</li>
+<li>unit: str : eenheid van de belastingparameter</li>
+<li>date_time: datetime64[ns, UTC] : datum/ tijd van de tijdreeksitem</li>
+<li>value: float64 : belasting van de tijdreeksitem</li>
+<li>value_type: str : type waarde van de tijdreeksitem (meting of verwacht)</li>
+<li>failureprobability float64 : faalkans bepaald voor de tijdreeksitem</li>
+<li>failuremechanism: str : code van het faalmechanisme</li>
+</ul>
+</section>
+<section id="attributes" class="level2">
+<h2 class="anchored" data-anchor-id="attributes">Attributes</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -207,22 +254,34 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.config.Config.config_path">config_path</a></td>
+<td><a href="#toolbox_continu_inzicht.sections.sections_technical_failureprobability.sections_technical_failureprobability.SectionsTechnicalFailureprobability.data_adapter">data_adapter</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.config.Config.data_adapters">data_adapters</a></td>
-<td></td>
+<td><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.df_in_fragility_curves">df_in_fragility_curves</a></td>
+<td>DataFrame: fragility curves voor de dijkvak.</td>
 </tr>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.config.Config.global_variables">global_variables</a></td>
-<td></td>
+<td><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.df_in_section_loads">df_in_section_loads</a></td>
+<td>DataFrame: tijdreeks met belasting op de dijkvak.</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.df_out">df_out</a></td>
+<td>DataFrame: uitvoer.</td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.input_schema_fragility_curves">input_schema_fragility_curves</a></td>
+<td>dict() -&gt; new empty dictionary</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.input_schema_loads">input_schema_loads</a></td>
+<td>dict() -&gt; new empty dictionary</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="methods" class="level4">
-<h4 class="anchored" data-anchor-id="methods">Methods</h4>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -232,19 +291,22 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.config.Config.lees_config">lees_config</a></td>
-<td>Laad het gegeven pad in, zet de configuraties klaar in de Config class</td>
+<td><a href="#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.run">run</a></td>
+<td>Uitvoeren van het bepalen van de faalkans van een dijkvak.</td>
 </tr>
 </tbody>
 </table>
-<section id="toolbox_continu_inzicht.base.config.Config.lees_config" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.config.Config.lees_config">lees_config</h5>
-<p><code>base.config.Config.lees_config()</code></p>
-<p>Laad het gegeven pad in, zet de configuraties klaar in de Config class</p>
+<section id="toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.run" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability.run">run</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sections.SectionsTechnicalFailureprobability.run(<span class="bu">input</span>, output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Uitvoeren van het bepalen van de faalkans van een dijkvak.</p>
+<p>Args:</p>
+<pre><code>input (list[str]): Lijst met namen van configuratie:
+    [0] tijdreeks met belasting op de dijkvak
+    [1] fragility curves voor de dijkvak
+output (str): uitvoer sectie van het yaml-bestand.</code></pre>
 
 
-</section>
-</section>
 </section>
 </section>
 </section>
@@ -332,8 +394,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -444,7 +504,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index – Toolbox continu inzicht</title>
+<title>input_section – Toolbox continu inzicht</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -119,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
+    <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Python API</span></a>
   </li>  
   <li class="nav-item">
@@ -143,47 +177,27 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/index.html">API Reference</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">API Reference</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#api-reference" id="toc-api-reference" class="nav-link active" data-scroll-target="#api-reference">API Reference</a>
+  <li><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section" id="toc-toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section">input_section</a>
   <ul class="collapse">
-  <li><a href="#basis" id="toc-basis" class="nav-link" data-scroll-target="#basis">Basis</a></li>
-  <li><a href="#belastingen" id="toc-belastingen" class="nav-link" data-scroll-target="#belastingen">Belastingen</a></li>
-  <li><a href="#dijkvak" id="toc-dijkvak" class="nav-link" data-scroll-target="#dijkvak">Dijkvak</a></li>
-  <li><a href="#fragility-curves" id="toc-fragility-curves" class="nav-link" data-scroll-target="#fragility-curves">Fragility curves</a></li>
-  <li><a href="#continu-inzicht-adapters-invoer" id="toc-continu-inzicht-adapters-invoer" class="nav-link" data-scroll-target="#continu-inzicht-adapters-invoer">Continu Inzicht Adapters (invoer)</a></li>
-  <li><a href="#continu-inzicht-adapters-uitvoer" id="toc-continu-inzicht-adapters-uitvoer" class="nav-link" data-scroll-target="#continu-inzicht-adapters-uitvoer">Continu Inzicht Adapters (uitvoer)</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sectionfractions" id="toc-toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sectionfractions" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sectionfractions">input_ci_postgresql_from_sectionfractions</a></li>
+  <li><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sections" id="toc-toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sections" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sections">input_ci_postgresql_from_sections</a></li>
+  <li><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_expert_judgement_table" id="toc-toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_expert_judgement_table" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_expert_judgement_table">input_ci_postgresql_section_expert_judgement_table</a></li>
+  <li><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_failure_probability_from_data_table" id="toc-toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_failure_probability_from_data_table" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_failure_probability_from_data_table">input_ci_postgresql_section_failure_probability_from_data_table</a></li>
+  <li><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_load_from_data_table" id="toc-toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_load_from_data_table" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_load_from_data_table">input_ci_postgresql_section_load_from_data_table</a></li>
+  <li><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_thresholds_from_conditions_table" id="toc-toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_thresholds_from_conditions_table" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_thresholds_from_conditions_table">input_ci_postgresql_section_thresholds_from_conditions_table</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -194,205 +208,264 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="api-reference" class="level1 doc doc-index">
-<h1 class="doc doc-index">API Reference</h1>
-<section id="basis" class="level2">
-<h2 class="anchored" data-anchor-id="basis">Basis</h2>
-<p>Basis functionaliteit waar andere functies op verder bouwen</p>
+<section id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section" class="level1">
+<h1>input_section</h1>
+<p><code>base.adapters.input.continu_inzicht_postgresql.input_section</code></p>
+<p>Data adapters voor het lezen van data uit de Continu Inzicht database</p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
 <table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><a href="../reference/Config.html#toolbox_continu_inzicht.Config">Config</a></td>
-<td>Basis functie om de configuratie in te laden.</td>
+<td><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sectionfractions">input_ci_postgresql_from_sectionfractions</a></td>
+<td>Ophalen sections fractions uit een continu database.</td>
 </tr>
 <tr class="even">
-<td><a href="../reference/DataAdapter.html#toolbox_continu_inzicht.DataAdapter">DataAdapter</a></td>
-<td>Basis DataAdapter</td>
+<td><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sections">input_ci_postgresql_from_sections</a></td>
+<td>Ophalen section data uit de Continu Inzicht database.</td>
 </tr>
 <tr class="odd">
-<td><a href="../reference/proof_of_concept.example_module.html#toolbox_continu_inzicht.proof_of_concept.example_module">proof_of_concept.example_module</a></td>
-<td></td>
+<td><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_expert_judgement_table">input_ci_postgresql_section_expert_judgement_table</a></td>
+<td>Ophalen klassegrenzen (faalkans) van een dijkvak uit een continu database.</td>
 </tr>
 <tr class="even">
-<td><a href="../reference/FragilityCurve.html#toolbox_continu_inzicht.FragilityCurve">FragilityCurve</a></td>
-<td>Class met een aantal gemakkelijke methoden om fragility curves</td>
+<td><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_failure_probability_from_data_table">input_ci_postgresql_section_failure_probability_from_data_table</a></td>
+<td>Ophalen faalkansen per dijkvak per moment</td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_load_from_data_table">input_ci_postgresql_section_load_from_data_table</a></td>
+<td>Ophalen tijdreeks van belasting per dijkvak</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_thresholds_from_conditions_table">input_ci_postgresql_section_thresholds_from_conditions_table</a></td>
+<td>Ophalen klassegrenzen (faalkans) van een dijkvak uit een continu database.</td>
 </tr>
 </tbody>
 </table>
+<section id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sectionfractions" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sectionfractions">input_ci_postgresql_from_sectionfractions</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>base.adapters.<span class="bu">input</span>.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sectionfractions(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    input_config</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ophalen sections fractions uit een continu database.</p>
+<p>Yaml example:</p>
+<pre><code>type: ci_postgresql_from_sectionfractions
+database: "geoserver"
+schema: "continuinzicht_demo_realtime"</code></pre>
+<p>Args:</p>
+<p>input_config (dict): configuratie opties</p>
+<p><strong>Opmerking:</strong></p>
+<p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
+<ul>
+<li>postgresql_user (str): inlog gebruikersnaam van de Continu Inzicht database</li>
+<li>postgresql_password (str): inlog wachtwoord van de Continu Inzicht database</li>
+<li>postgresql_host (str): servernaam/ ip adres van de Continu Inzicht databaseserver</li>
+<li>postgresql_port (str): poort van de Continu Inzicht databaseserver</li>
+</ul>
+<p>In de ‘yaml’ config moeten de volgende parameters staan:</p>
+<ul>
+<li>database (str): database van de Continu Inzicht</li>
+<li>schema (str): schema van de Continu Inzicht</li>
+</ul>
+<p>Returns:</p>
+<p>df (DataFrame):</p>
+<ul>
+<li>id: int64 : id van de dijkvak</li>
+<li>idup: int64 : id van bovenstrooms meetstation</li>
+<li>iddown: int64 : id van benedestrooms meetstation</li>
+<li>fractionup: float64 : fractie van bovenstrooms meetstation</li>
+<li>fractiondown: float64 : fractie van benedestrooms meetstation</li>
+</ul>
 </section>
-<section id="belastingen" class="level2">
-<h2 class="anchored" data-anchor-id="belastingen">Belastingen</h2>
-<p>Functies die belastingen inladen, classificeren of toekennen.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/LoadsCIWhatIf.html#toolbox_continu_inzicht.loads.LoadsCIWhatIf">LoadsCIWhatIf</a></td>
-<td>Met deze functie worden belasting opgehaald en weggeschreven.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/LoadsClassify.html#toolbox_continu_inzicht.loads.LoadsClassify">LoadsClassify</a></td>
-<td>Met deze functie worden de waterstanden met opgegeven grenzen geclassificeerd.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/LoadsFews.html#toolbox_continu_inzicht.loads.LoadsFews">LoadsFews</a></td>
-<td>Met deze functie worden gegevens uit de opgegeven FEWS omgeving opgehaald via REST.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/get_fews_locations.html#toolbox_continu_inzicht.loads.get_fews_locations">get_fews_locations</a></td>
-<td>Haal voor Fews de locaties op voor de opgegegeven parameters.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/get_fews_thresholds.html#toolbox_continu_inzicht.loads.get_fews_thresholds">get_fews_thresholds</a></td>
-<td>Haal voor Fews de thresholds op voor de opgegegeven parameter en locatie.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/LoadsMatroos.html#toolbox_continu_inzicht.loads.LoadsMatroos">LoadsMatroos</a></td>
-<td>De LoadsMatroos klasse haalt belastinggegevens op van de Rijkswaterstaat Waterwebservices.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/get_matroos_locations.html#toolbox_continu_inzicht.loads.get_matroos_locations">get_matroos_locations</a></td>
-<td>Haal alle matroos locaties op, indien gewenst ook bron en parameter.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/LoadsWaterwebservicesRWS.html#toolbox_continu_inzicht.loads.LoadsWaterwebservicesRWS">LoadsWaterwebservicesRWS</a></td>
-<td>Belastinggegevens ophalen van rijkswaterstaat waterwebservices https://waterwebservices.rijkswaterstaat.nl/</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/get_rws_webservices_locations.html#toolbox_continu_inzicht.loads.get_rws_webservices_locations">get_rws_webservices_locations</a></td>
-<td>Haal locaties op die bekend zijn bij de RWS webservice.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/LoadsToMoments.html#toolbox_continu_inzicht.loads.LoadsToMoments">LoadsToMoments</a></td>
-<td>Met deze klasse kunnen waterstandsgegevens worden omgezet naar bepaalde momenten.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/LoadsWaterinfo.html#toolbox_continu_inzicht.loads.LoadsWaterinfo">LoadsWaterinfo</a></td>
-<td>Belastinggegevens ophalen van rijkswaterstaat Waterinfo https://waterinfo.rws.nl/#/publiek/waterhoogte</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/get_waterinfo_locations.html#toolbox_continu_inzicht.loads.get_waterinfo_locations">get_waterinfo_locations</a></td>
-<td>Haal voor Waterinfo de locaties op voor de opgegegeven parameter.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/get_waterinfo_thresholds.html#toolbox_continu_inzicht.loads.get_waterinfo_thresholds">get_waterinfo_thresholds</a></td>
-<td>Haal voor Waterinfo de thresholds op voor de opgegegeven parameter.</td>
-</tr>
-</tbody>
-</table>
+<section id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sections" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sections">input_ci_postgresql_from_sections</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>base.adapters.<span class="bu">input</span>.continu_inzicht_postgresql.input_section.input_ci_postgresql_from_sections(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    input_config</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ophalen section data uit de Continu Inzicht database.</p>
+<p>Yaml example:</p>
+<pre><code>type: ci_postgresql_from_sections
+database: "geoserver"
+schema: "continuinzicht_demo_realtime"</code></pre>
+<p>Args:</p>
+<p>input_config (dict): configuratie opties</p>
+<p><strong>Opmerking:</strong></p>
+<p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
+<ul>
+<li>postgresql_user (str): inlog gebruikersnaam van de Continu Inzicht database</li>
+<li>postgresql_password (str): inlog wachtwoord van de Continu Inzicht database</li>
+<li>postgresql_host (str): servernaam/ ip adres van de Continu Inzicht databaseserver</li>
+<li>postgresql_port (str): poort van de Continu Inzicht databaseserver</li>
+</ul>
+<p>In de ‘yaml’ config moeten de volgende parameters staan:</p>
+<ul>
+<li>database (str): database van de Continu Inzicht</li>
+<li>schema (str): schema van de Continu Inzicht</li>
+</ul>
+<p>Returns:</p>
+<p>df (DataFrame):</p>
+<ul>
+<li>id: int64 : id van de dijkvak</li>
+<li>name: str : naam van de dijkvak</li>
+</ul>
 </section>
-<section id="dijkvak" class="level2">
-<h2 class="anchored" data-anchor-id="dijkvak">Dijkvak</h2>
-<p>Functies die betrekking hebben op dijkvakken</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/SectionsLoads.html#toolbox_continu_inzicht.sections.SectionsLoads">SectionsLoads</a></td>
-<td>Bepaal de belasting op een dijkvak</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/SectionsFailureprobability.html#toolbox_continu_inzicht.sections.SectionsFailureprobability">SectionsFailureprobability</a></td>
-<td>Bepaal de faalkans van een dijkvak</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/SectionsTechnicalFailureprobability.html#toolbox_continu_inzicht.sections.SectionsTechnicalFailureprobability">SectionsTechnicalFailureprobability</a></td>
-<td>Bepaal de technische faalkans van een dijkvak</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/SectionsMeasureFailureprobability.html#toolbox_continu_inzicht.sections.SectionsMeasureFailureprobability">SectionsMeasureFailureprobability</a></td>
-<td>Bepaal de faalkans door een maatregel van een dijkvak</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/SectionsClassify.html#toolbox_continu_inzicht.sections.SectionsClassify">SectionsClassify</a></td>
-<td>Bepaal de status van een dijkvak</td>
-</tr>
-</tbody>
-</table>
+<section id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_expert_judgement_table" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_expert_judgement_table">input_ci_postgresql_section_expert_judgement_table</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>base.adapters.<span class="bu">input</span>.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_expert_judgement_table(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    input_config</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ophalen klassegrenzen (faalkans) van een dijkvak uit een continu database.</p>
+<p>Yaml example:</p>
+<pre><code>type: ci_postgresql_section_thresholds_from_conditions_table
+database: "geoserver"
+schema: "continuinzicht_demo_realtime"</code></pre>
+<p>Args:</p>
+<p>input_config (dict): configuratie opties</p>
+<p><strong>Opmerking:</strong></p>
+<p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
+<ul>
+<li>postgresql_user (str): inlog gebruikersnaam van de Continu Inzicht database</li>
+<li>postgresql_password (str): inlog wachtwoord van de Continu Inzicht database</li>
+<li>postgresql_host (str): servernaam/ ip adres van de Continu Inzicht databaseserver</li>
+<li>postgresql_port (str): poort van de Continu Inzicht databaseserver</li>
+</ul>
+<p>In de ‘yaml’ config moeten de volgende parameters staan:</p>
+<ul>
+<li>database (str): database van de Continu Inzicht</li>
+<li>schema (str): schema van de Continu Inzicht</li>
+</ul>
+<p>Returns:</p>
+<p>df (DataFrame):</p>
+<ul>
+<li>state_id: int64 : id van de klassegrens</li>
+<li>lower_boundary: float64 : ondergrens van de klassegrens</li>
+<li>upper_boundary: float64 : bovengrens van de klassegrens</li>
+<li>color: str : kleur van de klassegrens</li>
+<li>label: str : legendanaam van de klassegrens</li>
+<li>unit: str : unit van de klassegrens</li>
+</ul>
 </section>
-<section id="fragility-curves" class="level2">
-<h2 class="anchored" data-anchor-id="fragility-curves">Fragility curves</h2>
-<p>Functies voor het berekenen en aanpassen van Fragility curve</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/FragilityCurveOvertopping.html#toolbox_continu_inzicht.fragility_curves.FragilityCurveOvertopping">FragilityCurveOvertopping</a></td>
-<td>Maakt een enkele fragility curve voor golf overslag.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/FragilityCurvesOvertopping.html#toolbox_continu_inzicht.fragility_curves.FragilityCurvesOvertopping">FragilityCurvesOvertopping</a></td>
-<td>Maakt een set van fragility curve voor golf overslag voor een dijkvak.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/ShiftFragilityCurveOvertopping.html#toolbox_continu_inzicht.fragility_curves.ShiftFragilityCurveOvertopping">ShiftFragilityCurveOvertopping</a></td>
-<td>Verschuift de fragility curve met een gegeven effect</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/ChangeCrestHeightFragilityCurveOvertopping.html#toolbox_continu_inzicht.fragility_curves.ChangeCrestHeightFragilityCurveOvertopping">ChangeCrestHeightFragilityCurveOvertopping</a></td>
-<td>Verschuift de kruin hoogte met het gegeven effect en berekent de fragility curve</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/FragilityCurvePipingFixedWaterlevelSimple.html#toolbox_continu_inzicht.fragility_curves.FragilityCurvePipingFixedWaterlevelSimple">FragilityCurvePipingFixedWaterlevelSimple</a></td>
-<td>Maakt een enkele fragility curve voor piping met een gegeven waterstand.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/FragilityCurvesPiping.html#toolbox_continu_inzicht.fragility_curves.FragilityCurvesPiping">FragilityCurvesPiping</a></td>
-<td>Maakt een set van fragility curves voor piping voor een dijkvak.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/CombineFragilityCurvesIndependent.html#toolbox_continu_inzicht.fragility_curves.CombineFragilityCurvesIndependent">CombineFragilityCurvesIndependent</a></td>
-<td>Combineer meerdere fragility curves onafhankelijk tot een enkele fragility curves.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/CombineFragilityCurvesDependent.html#toolbox_continu_inzicht.fragility_curves.CombineFragilityCurvesDependent">CombineFragilityCurvesDependent</a></td>
-<td>Combineer meerdere fragility curves afhankelijk tot een enkele fragility curves.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/CombineFragilityCurvesWeightedSum.html#toolbox_continu_inzicht.fragility_curves.CombineFragilityCurvesWeightedSum">CombineFragilityCurvesWeightedSum</a></td>
-<td>Combineer meerdere fragility curves met een gewogen som tot een enkele fragility curves.</td>
-</tr>
-</tbody>
-</table>
+<section id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_failure_probability_from_data_table" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_failure_probability_from_data_table">input_ci_postgresql_section_failure_probability_from_data_table</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>base.adapters.<span class="bu">input</span>.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_failure_probability_from_data_table(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    input_config</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ophalen faalkansen per dijkvak per moment</p>
+<p>Yaml example:</p>
+<pre><code>type: ci_postgresql_section_failure_probability_from_data_table
+database: "geoserver"
+schema: "continuinzicht_demo_realtime"</code></pre>
+<p>Args:</p>
+<p>input_config (dict): configuratie opties</p>
+<p><strong>Opmerking:</strong></p>
+<p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
+<ul>
+<li>postgresql_user (str): inlog gebruikersnaam van de Continu Inzicht database</li>
+<li>postgresql_password (str): inlog wachtwoord van de Continu Inzicht database</li>
+<li>postgresql_host (str): servernaam/ ip adres van de Continu Inzicht databaseserver</li>
+<li>postgresql_port (str): poort van de Continu Inzicht databaseserver</li>
+</ul>
+<p>In de ‘yaml’ config moeten de volgende parameters staan:</p>
+<ul>
+<li>database (str): database van de Continu Inzicht</li>
+<li>schema (str): schema van de Continu Inzicht</li>
+</ul>
+<p>Returns:</p>
+<p>df (DataFrame):</p>
+<ul>
+<li>failureprobability_id: in64 : id van de dijkvak/faalmechanisme/maatregel combinatie</li>
+<li>section_id: int64 : id van de dijkvak</li>
+<li>value_parameter_id: int64 : id van de belasting parameter (1/2/3/4)</li>
+<li>failuremechanism_id: int64 : id van het faalmechanisme</li>
+<li>failuremechanism: str : naam van het faalmechanisme</li>
+<li>measures_id: int64 : id van de maatregel</li>
+<li>measure: str : naam van de maatregel</li>
+<li>parameter_id: int64 : id van de faalkans parameter (5/100/101/102)</li>
+<li>unit: int64 : unit van de belasting</li>
+<li>date_time: datetime64 : datum/ tijd van de tijdreeksitem</li>
+<li>value: float : waarde van de tijdreeksitem</li>
+</ul>
 </section>
-<section id="continu-inzicht-adapters-invoer" class="level2">
-<h2 class="anchored" data-anchor-id="continu-inzicht-adapters-invoer">Continu Inzicht Adapters (invoer)</h2>
-<p>Invoer adapters voor Continu Inzicht meetstations/ dijkvak</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/input_measuringstation.html#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_measuringstation">input_measuringstation</a></td>
-<td>Data adapters voor het lezen van data uit de Continu Inzicht database</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/input_section.html#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section">input_section</a></td>
-<td>Data adapters voor het lezen van data uit de Continu Inzicht database</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/input_fragilitycurve.html#toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_fragilitycurve">input_fragilitycurve</a></td>
-<td>Data adapters voor het lezen van data uit de Continu Inzicht database</td>
-</tr>
-</tbody>
-</table>
+<section id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_load_from_data_table" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_load_from_data_table">input_ci_postgresql_section_load_from_data_table</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>base.adapters.<span class="bu">input</span>.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_load_from_data_table(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    input_config</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ophalen tijdreeks van belasting per dijkvak</p>
+<p>Yaml example:</p>
+<pre><code>type: ci_postgresql_section_load_from_data_table
+database: "geoserver"
+schema: "continuinzicht_demo_realtime"</code></pre>
+<p>Args:</p>
+<p>input_config (dict): configuratie opties</p>
+<p><strong>Opmerking:</strong></p>
+<p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
+<ul>
+<li>postgresql_user (str): inlog gebruikersnaam van de Continu Inzicht database</li>
+<li>postgresql_password (str): inlog wachtwoord van de Continu Inzicht database</li>
+<li>postgresql_host (str): servernaam/ ip adres van de Continu Inzicht databaseserver</li>
+<li>postgresql_port (str): poort van de Continu Inzicht databaseserver</li>
+</ul>
+<p>In de ‘yaml’ config moeten de volgende parameters staan:</p>
+<ul>
+<li>database (str): database van de Continu Inzicht</li>
+<li>schema (str): schema van de Continu Inzicht</li>
+</ul>
+<p>Returns:</p>
+<p>df (DataFrame):</p>
+<ul>
+<li>section_id: int64 : id van de dijkvak</li>
+<li>parameter_id: int64 : id van de parameter</li>
+<li>unit: str : unit van de parameter</li>
+<li>date_time: datetime64 : datum/ tijd van de tijdreeksitem</li>
+<li>value: float64 : waarde van de tijdreeksitem</li>
+<li>value_type: str : type waarde van de tijdreeksitem (meting of verwacht)</li>
+</ul>
 </section>
-<section id="continu-inzicht-adapters-uitvoer" class="level2">
-<h2 class="anchored" data-anchor-id="continu-inzicht-adapters-uitvoer">Continu Inzicht Adapters (uitvoer)</h2>
-<p>Uitvoer adapters voor Continu Inzicht meetstations/ dijkvak</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/output_measuringstation.html#toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation">output_measuringstation</a></td>
-<td>Data adapters voor het schrijven naar de Continu Inzicht database</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/output_section.html#toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_section">output_section</a></td>
-<td>Data adapters voor het schrijven naar de Continu Inzicht database</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/output_calculation.html#toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_calculation">output_calculation</a></td>
-<td>Data adapters voor het schrijven naar de Continu Inzicht database</td>
-</tr>
-</tbody>
-</table>
+<section id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_thresholds_from_conditions_table" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.input.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_thresholds_from_conditions_table">input_ci_postgresql_section_thresholds_from_conditions_table</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>base.adapters.<span class="bu">input</span>.continu_inzicht_postgresql.input_section.input_ci_postgresql_section_thresholds_from_conditions_table(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    input_config</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ophalen klassegrenzen (faalkans) van een dijkvak uit een continu database.</p>
+<p>Yaml example:</p>
+<pre><code>type: ci_postgresql_section_thresholds_from_conditions_table
+database: "geoserver"
+schema: "continuinzicht_demo_realtime"</code></pre>
+<p>Args:</p>
+<p>input_config (dict): configuratie opties</p>
+<p><strong>Opmerking:</strong></p>
+<p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
+<ul>
+<li>postgresql_user (str): inlog gebruikersnaam van de Continu Inzicht database</li>
+<li>postgresql_password (str): inlog wachtwoord van de Continu Inzicht database</li>
+<li>postgresql_host (str): servernaam/ ip adres van de Continu Inzicht databaseserver</li>
+<li>postgresql_port (str): poort van de Continu Inzicht databaseserver</li>
+</ul>
+<p>In de ‘yaml’ config moeten de volgende parameters staan:</p>
+<ul>
+<li>database (str): database van de Continu Inzicht</li>
+<li>schema (str): schema van de Continu Inzicht</li>
+</ul>
+<p>Returns:</p>
+<p>df (DataFrame):</p>
+<ul>
+<li>state_id: int64 : id van de klassegrens</li>
+<li>lower_boundary: float64 : ondergrens van de klassegrens</li>
+<li>upper_boundary: float64 : bovengrens van de klassegrens</li>
+<li>color: str : kleur van de klassegrens</li>
+<li>label: str : legendanaam van de klassegrens</li>
+<li>unit: str : unit van de klassegrens</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>base.data_adapter – Toolbox continu inzicht</title>
+<title>loadsmatroos – Toolbox continu inzicht</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -35,10 +69,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e212f1f3c46809d555a1335ea96b499f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -92,16 +126,39 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Achtergrond</span></a>
+    <a class="nav-link" href="../install.html"> 
+<span class="menu-text">Installeren</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-voorbeelden" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Voorbeelden</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-voorbeelden">    
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/1.proof_of_concept.html">
+ <span class="dropdown-text">Voorbeelden</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/2.belastingen_inladen.html">
+ <span class="dropdown-text">Belastingen inladen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/3.fragility_curve_overtopping.html">
+ <span class="dropdown-text">Fragility Curve Overtopping</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../modules_index.html"> 
+<span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../reference/index.html"> 
-<span class="menu-text">Python documentatie</span></a>
+<span class="menu-text">Python API</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../examples/notebooks/proof_of_concept.html"> 
-<span class="menu-text">Voorbeelden</span></a>
+    <a class="nav-link" href="../contact.html"> 
+<span class="menu-text">Overig</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -130,27 +187,33 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#toolbox_continu_inzicht.base.data_adapter" id="toc-toolbox_continu_inzicht.base.data_adapter" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.base.data_adapter">base.data_adapter</a>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsMatroos" id="toc-toolbox_continu_inzicht.loads.LoadsMatroos" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsMatroos">LoadsMatroos</a>
   <ul class="collapse">
-  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes">Classes</a>
+  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
-  <li><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter" id="toc-toolbox_continu_inzicht.base.data_adapter.DataAdapter" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.base.data_adapter.DataAdapter">DataAdapter</a></li>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.create_dataframe" id="toc-toolbox_continu_inzicht.loads.LoadsMatroos.create_dataframe" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsMatroos.create_dataframe">create_dataframe</a></li>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.format_location_names" id="toc-toolbox_continu_inzicht.loads.LoadsMatroos.format_location_names" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsMatroos.format_location_names">format_location_names</a></li>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.generate_url" id="toc-toolbox_continu_inzicht.loads.LoadsMatroos.generate_url" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsMatroos.generate_url">generate_url</a></li>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.run" id="toc-toolbox_continu_inzicht.loads.LoadsMatroos.run" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsMatroos.run">run</a></li>
   </ul></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="toolbox_continu_inzicht.base.data_adapter" class="level1">
-<h1>base.data_adapter</h1>
-<p><code>base.data_adapter</code></p>
-<section id="classes" class="level2">
-<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<section id="toolbox_continu_inzicht.loads.LoadsMatroos" class="level1">
+<h1>LoadsMatroos</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsMatroos()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De LoadsMatroos klasse haalt belastinggegevens op van de Rijkswaterstaat Waterwebservices.</p>
+<p>Args: data_adapter: DataAdapter De data adapter voor het ophalen en opslaan van gegevens. df_in: Optional[pd.DataFrame] | None = None Het invoerdataframe. df_out: Optional[pd.DataFrame] | None = None Het uitvoerdataframe.</p>
+<section id="attributes" class="level2">
+<h2 class="anchored" data-anchor-id="attributes">Attributes</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -160,17 +223,34 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter">DataAdapter</a></td>
-<td>Basis DataAdapter</td>
+<td><a href="#toolbox_continu_inzicht.loads.loads_matroos.loads_matroos.LoadsMatroos.data_adapter">data_adapter</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.df_in">df_in</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.df_out">df_out</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.url_retrieve_series_matroos">url_retrieve_series_matroos</a></td>
+<td>str(object=’’) -&gt; str</td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.url_retrieve_series_noos">url_retrieve_series_noos</a></td>
+<td>str(object=’’) -&gt; str</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.url_retrieve_series_vitaal">url_retrieve_series_vitaal</a></td>
+<td>str(object=’’) -&gt; str</td>
 </tr>
 </tbody>
 </table>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter">DataAdapter</h3>
-<p><code>base.data_adapter.DataAdapter()</code></p>
-<p>Basis DataAdapter</p>
-<section id="attributes" class="level4">
-<h4 class="anchored" data-anchor-id="attributes">Attributes</h4>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -180,184 +260,201 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.config">config</a></td>
-<td></td>
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.create_dataframe">create_dataframe</a></td>
+<td>Maakt een dataframe met waardes van de rws water webservices</td>
 </tr>
 <tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_types">input_types</a></td>
-<td></td>
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.format_location_names">format_location_names</a></td>
+<td>Neemt een lijst met locatienamen en verwijdert spaties en maakt ze allemaal in kleine letters</td>
 </tr>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_types">output_types</a></td>
-<td></td>
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.generate_url">generate_url</a></td>
+<td>Geeft de benodigde URL terug om het verzoek naar de Noos-server te maken</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsMatroos.run">run</a></td>
+<td>Voert de functie uit om gegevens op te halen en te verwerken voor de matroos-toolbox.</td>
+</tr>
+</tbody>
+</table>
+<section id="toolbox_continu_inzicht.loads.LoadsMatroos.create_dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsMatroos.create_dataframe">create_dataframe</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsMatroos.create_dataframe(options, df_in, calc_time, json_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maakt een dataframe met waardes van de rws water webservices</p>
+<section id="parameters" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 55%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>options</td>
+<td>dict</td>
+<td>Een dictionary met opties uit de config</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>calc_time</td>
+<td>datetime</td>
+<td>De huidige tijd</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td>json_data</td>
+<td>list</td>
+<td>Een lijst met JSON data</td>
+<td><em>required</em></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="methods" class="level4">
-<h4 class="anchored" data-anchor-id="methods">Methods</h4>
+<section id="returns" class="level4 doc-section doc-section-returns">
+<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns:</h4>
+<pre><code>pd.Dataframe
+    Pandas dataframe geschikt voor uitvoer</code></pre>
+</section>
+</section>
+<section id="toolbox_continu_inzicht.loads.LoadsMatroos.format_location_names" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsMatroos.format_location_names">format_location_names</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsMatroos.format_location_names(location_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Neemt een lijst met locatienamen en verwijdert spaties en maakt ze allemaal in kleine letters</p>
+</section>
+<section id="toolbox_continu_inzicht.loads.LoadsMatroos.generate_url" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsMatroos.generate_url">generate_url</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsMatroos.generate_url(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    calc_time</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    options</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    global_variables</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    parameter</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    location_names</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Geeft de benodigde URL terug om het verzoek naar de Noos-server te maken</p>
+<section id="parameters-1" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-1">Parameters</h4>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 6%">
+<col style="width: 69%">
+<col style="width: 9%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>calc_time</td>
+<td></td>
+<td>Huidige tijd, wordt gebruikt om de meest recente voorspelling op te halen</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>options</td>
+<td></td>
+<td>Opties die door de gebruiker zijn opgegeven, in dit geval is ‘source’ het belangrijkst</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td>global_variables</td>
+<td></td>
+<td>Globale variabelen die nodig zijn om de URL te genereren</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>parameter</td>
+<td></td>
+<td>Eenheid van de parameter waarvoor gegevens worden opgehaald</td>
+<td><em>required</em></td>
+</tr>
+<tr class="odd">
+<td>location_names</td>
+<td></td>
+<td>Lijst van locatienamen waarvoor gegevens worden opgehaald</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-1" class="level4 doc-section doc-section-returns">
+<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns-1">Returns</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.initialize_input_types">initialize_input_types</a></td>
 <td></td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.initialize_output_types">initialize_output_types</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.input">input</a></td>
-<td>Gegeven het config, stuurt de juiste input waarde aan</td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_csv">input_csv</a></td>
-<td>Laat een csv bestand in gegeven een pad</td>
-</tr>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_netcdf">input_netcdf</a></td>
-<td>Laat een netcdf bestand in gegeven een pad</td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_postgresql">input_postgresql</a></td>
-<td>Schrijft data naar een postgresql database gegeven het pad naar een credential bestand.</td>
-</tr>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.output">output</a></td>
-<td>Gegeven het config, stuurt de juiste input waarde aan</td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_csv">output_csv</a></td>
-<td>schrijft een csv bestand in gegeven een pad</td>
-</tr>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_netcdf">output_netcdf</a></td>
-<td>schrijft een netCDF bestand in gegeven een pad</td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_postgresql">output_postgresql</a></td>
-<td>Schrijft data naar een postgresql database gegeven het pad naar een credential bestand.</td>
+<td>str</td>
+<td>De gegenereerde URL voor het verzoek aan de Noos-server</td>
 </tr>
 </tbody>
 </table>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.initialize_input_types" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.initialize_input_types">initialize_input_types</h5>
-<p><code>base.data_adapter.DataAdapter.initialize_input_types()</code></p>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.initialize_output_types" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.initialize_output_types">initialize_output_types</h5>
-<p><code>base.data_adapter.DataAdapter.initialize_output_types()</code></p>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input">input</h5>
-<p><code>base.data_adapter.DataAdapter.input(input)</code></p>
-<p>Gegeven het config, stuurt de juiste input waarde aan</p>
-<section id="parameters" class="level6">
-<h6 class="anchored" data-anchor-id="parameters">Parameters:</h6>
-<p>input: str Naam van de data adapter die gebruikt wordt.</p>
-<p>opties: dict extra informatie die ook naar de functie moet om het bestand te lezen</p>
 </section>
 </section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_csv" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_csv">input_csv</h5>
-<p><code>base.data_adapter.DataAdapter.input_csv(input_config)</code></p>
-<p>Laat een csv bestand in gegeven een pad</p>
-<section id="returns" class="level6">
-<h6 class="anchored" data-anchor-id="returns">Returns:</h6>
-<p>pd.Dataframe</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_netcdf" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_netcdf">input_netcdf</h5>
-<p><code>base.data_adapter.DataAdapter.input_netcdf(input_config)</code></p>
-<p>Laat een netcdf bestand in gegeven een pad</p>
-<section id="notes" class="level6">
-<h6 class="anchored" data-anchor-id="notes">Notes:</h6>
-<p>Lees het netCDF bestand met xarray in en converteer de dataset naar een pandas dataframe.</p>
-</section>
-<section id="returns-1" class="level6">
-<h6 class="anchored" data-anchor-id="returns-1">Returns:</h6>
-<p>pd.Dataframe</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_postgresql" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_postgresql">input_postgresql</h5>
-<p><code>base.data_adapter.DataAdapter.input_postgresql(input_config)</code></p>
-<p>Schrijft data naar een postgresql database gegeven het pad naar een credential bestand.</p>
-<section id="parametes" class="level6">
-<h6 class="anchored" data-anchor-id="parametes">Parametes:</h6>
-<p>input_config: dict in</p>
-</section>
-<section id="notes-1" class="level6">
-<h6 class="anchored" data-anchor-id="notes-1">Notes:</h6>
-<p>In de <code>.env</code> environment bestand moet staan: user: str password: str host: str port: str database: str schema: str</p>
-</section>
-<section id="returns-2" class="level6">
-<h6 class="anchored" data-anchor-id="returns-2">Returns:</h6>
-<p>pd.Dataframe</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output">output</h5>
-<p><code>base.data_adapter.DataAdapter.output(output, df)</code></p>
-<p>Gegeven het config, stuurt de juiste input waarde aan</p>
-<section id="parameters-1" class="level6">
-<h6 class="anchored" data-anchor-id="parameters-1">Parameters:</h6>
-<p>output: name of the data adapter to use df: pd.Dataframe pandas dataframe om weg te schrijven</p>
-<p>opties: dict extra informatie die ook naar de functie moet om het bestand te schrijven</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_csv" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_csv">output_csv</h5>
-<p><code>base.data_adapter.DataAdapter.output_csv(output_config, df)</code></p>
-<p>schrijft een csv bestand in gegeven een pad</p>
-<section id="notes-2" class="level6">
-<h6 class="anchored" data-anchor-id="notes-2">Notes:</h6>
-<p>Gebruikt hiervoor de pandas.DataFrame.to_csv Opties om dit aan te passen kunnen worden mee gegeven in het configuratie bestand.</p>
-</section>
-<section id="returns-3" class="level6">
-<h6 class="anchored" data-anchor-id="returns-3">Returns:</h6>
-<p>None</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_netcdf" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_netcdf">output_netcdf</h5>
-<p><code>base.data_adapter.DataAdapter.output_netcdf(output_config, df)</code></p>
-<p>schrijft een netCDF bestand in gegeven een pad</p>
-<section id="notes-3" class="level6">
-<h6 class="anchored" data-anchor-id="notes-3">Notes:</h6>
-<p>Gebruikt hiervoor eerst de xarray.from_dataframe om een xarray dataset te maken vervolgens xarray to_netcdf om het bestand te genereren. Opties om dit aan te passen kunnen worden mee gegeven in het configuratie bestand.</p>
-</section>
-<section id="returns-4" class="level6">
-<h6 class="anchored" data-anchor-id="returns-4">Returns:</h6>
-<p>None</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_postgresql" class="level5">
-<h5 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_postgresql">output_postgresql</h5>
-<p><code>base.data_adapter.DataAdapter.output_postgresql(output_config, df)</code></p>
-<p>Schrijft data naar een postgresql database gegeven het pad naar een credential bestand.</p>
-<section id="parametes-1" class="level6">
-<h6 class="anchored" data-anchor-id="parametes-1">Parametes:</h6>
-<p>df: pd.Dataframe dataframe met data om weg te schrijven opties: dict dictionary met extra opties waar onder: schema: str naam van het schema in de postgresql database table: str naam van de tabel in de postgresql database</p>
-</section>
-<section id="notes-4" class="level6">
-<h6 class="anchored" data-anchor-id="notes-4">Notes:</h6>
-<p>In het credential bestand moet staan: user: str password: str host: str port: str database: str</p>
-</section>
-<section id="returns-5" class="level6">
-<h6 class="anchored" data-anchor-id="returns-5">Returns:</h6>
-<p>None</p>
+<section id="toolbox_continu_inzicht.loads.LoadsMatroos.run" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsMatroos.run">run</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsMatroos.run(<span class="bu">input</span>, output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Voert de functie uit om gegevens op te halen en te verwerken voor de matroos-toolbox.</p>
+<section id="parameters-2" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-2">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 67%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>input</td>
+<td>str</td>
+<td>Naam van de dataadapter met invoergegevens.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>output</td>
+<td>str</td>
+<td>Naam van de dataadapter om uitvoergegevens op te slaan.</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
 
 
-</section>
-</section>
 </section>
 </section>
 </section>
@@ -446,8 +543,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -558,7 +653,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Modules – Toolbox continu inzicht</title>
+<title>loadsfews – Toolbox continu inzicht</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e212f1f3c46809d555a1335ea96b499f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +102,20 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="https://raw.githubusercontent.com/continu-inzicht/toolbox-continu-inzicht/main/docs/assets/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Toolbox continu inzicht</span>
     </a>
   </div>
@@ -92,21 +126,44 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Achtergrond</span></a>
+    <a class="nav-link" href="../install.html"> 
+<span class="menu-text">Installeren</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-voorbeelden" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Voorbeelden</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-voorbeelden">    
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/1.proof_of_concept.html">
+ <span class="dropdown-text">Voorbeelden</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/2.belastingen_inladen.html">
+ <span class="dropdown-text">Belastingen inladen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../examples/notebooks/3.fragility_curve_overtopping.html">
+ <span class="dropdown-text">Fragility Curve Overtopping</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../modules_index.html"> 
+<span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reference/index.html"> 
-<span class="menu-text">Python documentatie</span></a>
+    <a class="nav-link" href="../reference/index.html"> 
+<span class="menu-text">Python API</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./examples/notebooks/proof_of_concept.html"> 
-<span class="menu-text">Voorbeelden</span></a>
+    <a class="nav-link" href="../contact.html"> 
+<span class="menu-text">Overig</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./contributing.html"> 
+    <a class="nav-link" href="../contributing.html"> 
 <span class="menu-text">Bijdragen</span></a>
   </li>  
   <li class="nav-item compact">
@@ -120,162 +177,128 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modules.html">Modules</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Toolbox continu inzicht</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./modules.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Modules</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Testprotocol</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./contact.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contact</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Instalatie instructies</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Changelog</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-architectuur" id="toc-sec-architectuur" class="nav-link active" data-scroll-target="#sec-architectuur">Basis architectuur Toolbox Continu Inzicht</a>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsFews" id="toc-toolbox_continu_inzicht.loads.LoadsFews" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsFews">LoadsFews</a>
   <ul class="collapse">
-  <li><a href="#configuratie" id="toc-configuratie" class="nav-link" data-scroll-target="#configuratie">Configuratie</a></li>
-  <li><a href="#data-adapter" id="toc-data-adapter" class="nav-link" data-scroll-target="#data-adapter">Data adapter</a></li>
+  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsFews.create_dataframe" id="toc-toolbox_continu_inzicht.loads.LoadsFews.create_dataframe" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsFews.create_dataframe">create_dataframe</a></li>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsFews.create_params" id="toc-toolbox_continu_inzicht.loads.LoadsFews.create_params" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsFews.create_params">create_params</a></li>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsFews.create_url" id="toc-toolbox_continu_inzicht.loads.LoadsFews.create_url" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsFews.create_url">create_url</a></li>
+  <li><a href="#toolbox_continu_inzicht.loads.LoadsFews.run" id="toc-toolbox_continu_inzicht.loads.LoadsFews.run" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.loads.LoadsFews.run">run</a></li>
   </ul></li>
-  <li><a href="#sec-belastingen" id="toc-sec-belastingen" class="nav-link" data-scroll-target="#sec-belastingen">Belastingen inlezen en classificeren</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Modules</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>De Toolbox Continu Inzicht wordt incrementeel ontwikkeld. De IT-ontwikkeling is opgedeeld in sprintblokken. Binnen elk sprintblok worden één of meerdere modules ontwikkeld. Voor elke module worden Python-scripts ontwikkeld waarmee een functie kan worden uitgevoerd. Een voorbeeld van een functie is het uitlezen van waterstanden uit FEWS. De scripts en de code (inclusief documentatie) worden na het afronden van iedere sprint gepubliceerd op deze Wikipagina en een publieke <a href="https://github.com/continu-inzicht/toolbox-continu-inzicht">Github</a>. De scripts worden vrijgegeven nadat deze succesvol het testprotocol hebben doorlopen.</p>
-<p>De ontwikkeling van de volgende modules is voorzien:</p>
-<ol type="1">
-<li><a href="#sec-architectuur">Basis architectuur Toolbox Continu Inzicht</a></li>
-<li><a href="#sec-belastingen">Belastingen inlezen en classificeren</a></li>
-<li>Bepalen fragility curves</li>
-<li>Bijstellen fragility curves (beheerdersoordeel in voorbereiding)</li>
-<li>Conditionele kansen en status waterkering per sectie</li>
-<li>Zorgplicht LBO2: effect nieuwe statistiek en rekenregels op de faalkans</li>
-<li>Inspectieresultaten inlezen en weergeven</li>
-<li>Resultaten ontsluiten via Digitale Delta API</li>
-</ol>
-<section id="sec-architectuur" class="level2">
-<h2 class="anchored" data-anchor-id="sec-architectuur">Basis architectuur Toolbox Continu Inzicht</h2>
-<p>De architectuur van de toolbox continu inzicht is ontworpen om flexibel te zijn.</p>
-<section id="configuratie" class="level3">
-<h3 class="anchored" data-anchor-id="configuratie">Configuratie</h3>
-<p>Per systeem kunnen de wensen van de gebruiker veranderen, het systeem is dan ook te configureren voor verschillende data bronnen.</p>
+<section id="toolbox_continu_inzicht.loads.LoadsFews" class="level1">
+<h1>LoadsFews</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsFews()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Met deze functie worden gegevens uit de opgegeven FEWS omgeving opgehaald via REST.</p>
+<section id="attributes" class="level2">
+<h2 class="anchored" data-anchor-id="attributes">Attributes</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.loads.loads_fews.loads_fews.LoadsFews.data_adapter">data_adapter</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsFews.df_in">df_in</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsFews.df_out">df_out</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsFews.input_schema">input_schema</a></td>
+<td>dict() -&gt; new empty dictionary</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="data-adapter" class="level3">
-<h3 class="anchored" data-anchor-id="data-adapter">Data adapter</h3>
-<p>De data adapter wordt gebruikt om verschillende data types in en uit te lezen. Op het moment zijn dit de volgende data formaten:</p>
-<ol type="1">
-<li>CSV</li>
-<li>NetCDF</li>
-<li>PostgreSQL</li>
-</ol>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsFews.create_dataframe">create_dataframe</a></td>
+<td>Maak een pandas dataframe</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsFews.create_params">create_params</a></td>
+<td>Maak een lijst van FEWS parameters om mee te sturen bij het ophalen van data.</td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsFews.create_url">create_url</a></td>
+<td>Maak een rest url voor FEWS</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.loads.LoadsFews.run">run</a></td>
+<td>De runner van de Loads Fews.</td>
+</tr>
+</tbody>
+</table>
+<section id="toolbox_continu_inzicht.loads.LoadsFews.create_dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsFews.create_dataframe">create_dataframe</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsFews.create_dataframe(options, calc_time, json_data, locations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maak een pandas dataframe</p>
+<p>Args: json_data (str): JSON data</p>
+<p>Returns: Dataframe: Pandas dataframe geschikt voor uitvoer definition: - Meetlocatie id (measurement_location_id) - Meetlocatie code (measurement_location_code) - Meetlocatie omschrijving/naam (measurement_location_description) - Parameter id overeenkomstig Aquo-standaard: ‘4724’ (parameter_id) - Parameter code overeenkomstig Aquo-standaard: ‘WATHTE’ (parameter_code) - Parameter omschrijving overeenkomstig Aquo-standaard: ‘Waterhoogte’ (parameter_description) - Eenheid (unit) - Datum en tijd (date_time) - Waarde (value) - Type waarde: meting of verwachting (value_type)</p>
+</section>
+<section id="toolbox_continu_inzicht.loads.LoadsFews.create_params" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsFews.create_params">create_params</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsFews.create_params(calc_time, options, moments, locations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maak een lijst van FEWS parameters om mee te sturen bij het ophalen van data.</p>
+<p>Args: calc_time (datetime): T0 in UTC options (<em>type</em>): options uit de invoer yaml</p>
+<p>Returns: dict: lijst met parameters</p>
+</section>
+<section id="toolbox_continu_inzicht.loads.LoadsFews.create_url" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsFews.create_url">create_url</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsFews.create_url(options)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maak een rest url voor FEWS</p>
+<p>Args: options (<em>type</em>): Options uit de invoer yaml</p>
+<p>Returns: str: URL</p>
+</section>
+<section id="toolbox_continu_inzicht.loads.LoadsFews.run" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.loads.LoadsFews.run">run</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>loads.LoadsFews.run(<span class="bu">input</span>, output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De runner van de Loads Fews.</p>
+<p>Args:</p>
+<p>Returns: None</p>
+
+
 </section>
 </section>
-<section id="sec-belastingen" class="level2">
-<h2 class="anchored" data-anchor-id="sec-belastingen">Belastingen inlezen en classificeren</h2>
-<p>Dit maakt deel uit van sprint 2, deze tekst zal na uitvoering van de sprint worden aangevuld.</p>
-<!-- ## Bepalen fragility curves {#sec-Bepalen-fragility-curves}
-
-Tekst na uitvoering aan te vulen 
-
-
-## Bijstellen fragility curves {#sec-Bijstellen-fragility-curves}
-
-Tekst na uitvoering aan te vulen 
-
-
-## Conditionele kansen en status waterkering per sectie  {#sec-Conditionele-kansen}
-
-Tekst na uitvoering aan te vulen 
-
-
-## Zorgplicht LBO2: effect nieuwe statistiek en rekenregels op de faalkans {#sec-Zorgplicht}
-
-Tekst na uitvoering aan te vulen 
-
-
-## Inspectieresultaten inlezen en weergeven {#sec-Resltaten-inlezen}
-
-Tekst na uitvoering aan te vulen 
-
-
-## Resultaten ontsluiten via Digitale Delta API {#sec-Resltaten-ontsluiten}
-
-Tekst na uitvoering aan te vulen -->
-
-
 </section>
 
 </main> <!-- /main -->
@@ -361,8 +384,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -473,7 +494,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
