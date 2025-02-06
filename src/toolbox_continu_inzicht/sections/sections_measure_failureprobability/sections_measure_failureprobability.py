@@ -2,13 +2,14 @@
 Bepaal de faalkans door een maatregel van een dijkvak
 """
 
-from pydantic.dataclasses import dataclass
-from scipy.interpolate import interp1d
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from typing import Optional
 
 import numpy as np
 import pandas as pd
+from pydantic.dataclasses import dataclass
+from scipy.interpolate import interp1d
+
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 
 
 @dataclass(config={"arbitrary_types_allowed": True})

@@ -1,8 +1,10 @@
 from pathlib import Path
+
+import pytest
+
 from toolbox_continu_inzicht.base.config import Config
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
-from toolbox_continu_inzicht.proof_of_concept import ValuesTimesTwo, ValuesDivideTwo
-import pytest
+from toolbox_continu_inzicht.proof_of_concept import ValuesDivideTwo, ValuesTimesTwo
 
 
 def test_DataAdapter_csv_keer():

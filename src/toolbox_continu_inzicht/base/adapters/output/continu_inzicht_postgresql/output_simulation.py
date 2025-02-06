@@ -4,6 +4,7 @@ Data adapters voor het schrijven naar de Continu Inzicht database
 
 import pandas as pd
 import sqlalchemy
+
 from toolbox_continu_inzicht.utils.datetime_functions import epoch_from_datetime
 
 

@@ -2,11 +2,12 @@
 Bepaal de faalkans van een dijkvak
 """
 
-from pydantic.dataclasses import dataclass
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from typing import Optional
 
 import pandas as pd
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 
 
 @dataclass(config={"arbitrary_types_allowed": True})

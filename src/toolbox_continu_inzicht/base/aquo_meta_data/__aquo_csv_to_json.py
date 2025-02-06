@@ -1,9 +1,10 @@
 """Script voor het omzetten van aquo grootheden csv naar json formaat"""
 
 if __name__ == "__main__":
-    import pandas as pd
-    from pathlib import Path
     import json
+    from pathlib import Path
+
+    import pandas as pd
 
     path = Path(__file__).parent
     df_aquo = pd.read_csv(path / "AQUO(Parameters).csv", encoding="unicode_escape")

@@ -2,12 +2,13 @@
 Data adapters voor het schrijven naar de Continu Inzicht database
 """
 
-import pandas as pd
-import sqlalchemy
-
 from datetime import datetime
 from typing import Dict
+
+import pandas as pd
+import sqlalchemy
 from sqlalchemy.engine import Engine
+
 from toolbox_continu_inzicht.utils.datetime_functions import epoch_from_datetime
 
 

@@ -1,7 +1,9 @@
-from pathlib import Path
-from toolbox_continu_inzicht.base.config import Config
-import pytest
 from datetime import datetime, timezone
+from pathlib import Path
+
+import pytest
+
+from toolbox_continu_inzicht.base.config import Config
 
 
 def test_Config():

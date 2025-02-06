@@ -1,6 +1,6 @@
 import os
-
 from pathlib import Path
+
 from toolbox_continu_inzicht.base.config import Config
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from toolbox_continu_inzicht.loads import LoadsClassify

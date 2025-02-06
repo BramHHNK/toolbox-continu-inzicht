@@ -1,8 +1,9 @@
 from dataclasses import field
+from typing import Callable, Optional
+
 import numpy as np
-from pydantic.dataclasses import dataclass
 import pandas as pd
-from typing import Optional, Callable
+from pydantic.dataclasses import dataclass
 
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from toolbox_continu_inzicht.base.fragility_curve import FragilityCurve

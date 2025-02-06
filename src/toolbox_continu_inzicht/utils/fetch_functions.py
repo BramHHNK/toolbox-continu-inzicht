@@ -1,5 +1,5 @@
-import requests
 import httpx
+import requests
 
 
 def fetch_data_get(

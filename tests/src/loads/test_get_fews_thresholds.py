@@ -1,5 +1,7 @@
 import os
+
 import pytest
+
 from toolbox_continu_inzicht.loads import get_fews_thresholds
 
 

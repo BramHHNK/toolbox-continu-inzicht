@@ -1,12 +1,13 @@
 from pathlib import Path
-import pandas as pd
+
 import numpy as np
+import pandas as pd
+
 from toolbox_continu_inzicht.base.data_adapter import Config, DataAdapter
 from toolbox_continu_inzicht.fragility_curves import (
     FragilityCurvePipingFixedWaterlevelSimple,
     FragilityCurvesPiping,
 )
-
 
 ### unused for now
 # def test_fragility_curve_piping():

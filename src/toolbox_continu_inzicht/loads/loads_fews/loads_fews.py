@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta
-from pydantic.dataclasses import dataclass
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter
+from typing import List, Optional
+
 import pandas as pd
-from typing import Optional, List
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from toolbox_continu_inzicht.utils.datetime_functions import (
     datetime_from_string,
 )

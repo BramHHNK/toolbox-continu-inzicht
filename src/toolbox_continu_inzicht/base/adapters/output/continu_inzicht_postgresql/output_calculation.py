@@ -2,10 +2,11 @@
 Data adapters voor het schrijven naar de Continu Inzicht database
 """
 
+from datetime import datetime, timezone
+
 import pandas as pd
 import sqlalchemy
 
-from datetime import datetime, timezone
 from toolbox_continu_inzicht.utils.datetime_functions import epoch_from_datetime
 
 

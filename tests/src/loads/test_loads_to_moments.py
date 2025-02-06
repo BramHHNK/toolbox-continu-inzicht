@@ -1,10 +1,11 @@
-from pathlib import Path
 import os
+from pathlib import Path
+
+from test_loads_matroos import test_LoadsMatroos_noos
 
 from toolbox_continu_inzicht.base.config import Config
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from toolbox_continu_inzicht.loads import LoadsToMoments
-from test_loads_matroos import test_LoadsMatroos_noos
 
 
 def test_run_LoadsToMoments_no_tide():

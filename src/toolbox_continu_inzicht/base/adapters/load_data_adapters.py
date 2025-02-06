@@ -2,12 +2,12 @@
 Functionality to load functions from a package or a directory
 """
 
-from pathlib import Path
-import inspect
-import sys
-import os
 import importlib.util
+import inspect
+import os
+import sys
 from collections.abc import ItemsView
+from pathlib import Path
 
 
 def get_functions_from_package(package: object, remove_prefix: str) -> dict:

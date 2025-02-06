@@ -1,16 +1,17 @@
 from typing import Any, Dict, List, Tuple
+
 import numpy as np
 import pandas as pd
-
-from scipy.stats import lognorm
 
 # TODO: shorten imports to be more user friendly
 import pydra_core
 import pydra_core.location
 from pydra_core.location.model.statistics.stochastics.model_uncertainty import (
-    ModelUncertainty,
     DistributionUncertainty,
+    ModelUncertainty,
 )
+from scipy.stats import lognorm
+
 from toolbox_continu_inzicht.fragility_curves.fragility_curve_overtopping.pydra_legacy import (
     bretschneider,
     get_qcr_dist,

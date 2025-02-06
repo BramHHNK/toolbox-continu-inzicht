@@ -1,9 +1,11 @@
-from pydantic.dataclasses import dataclass
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter
+from datetime import datetime, timedelta
+from typing import Optional
+
 import pandas as pd
 import pandas.api.types as ptypes
-from typing import Optional
-from datetime import datetime, timedelta
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 
 
 @dataclass(config={"arbitrary_types_allowed": True})

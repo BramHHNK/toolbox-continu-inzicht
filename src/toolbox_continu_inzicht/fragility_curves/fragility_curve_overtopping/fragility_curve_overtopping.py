@@ -1,18 +1,19 @@
-import pandas as pd
-from pydantic.dataclasses import dataclass
-from typing import Optional
 from pathlib import Path
+from typing import Optional
+
+import pandas as pd
 
 # pydra_core=0.0.1
 import pydra_core
 import pydra_core.common
 import pydra_core.common.enum
 import pydra_core.location
+from pydantic.dataclasses import dataclass
 
+from toolbox_continu_inzicht import Config, DataAdapter, FragilityCurve
 from toolbox_continu_inzicht.fragility_curves.fragility_curve_overtopping.calculate_fragility_curve_overtopping import (
     WaveOvertoppingCalculation,
 )
-from toolbox_continu_inzicht import FragilityCurve, DataAdapter, Config
 
 
 @dataclass(config={"arbitrary_types_allowed": True})

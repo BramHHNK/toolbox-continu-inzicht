@@ -1,8 +1,9 @@
-import yaml
+from datetime import datetime, timezone
 from pathlib import Path
+
+import yaml
 from pydantic import BaseModel as PydanticBaseModel
 from yaml.scanner import ScannerError
-from datetime import datetime, timezone
 
 
 class Config(PydanticBaseModel):

@@ -1,11 +1,13 @@
-import numpy as np
 from pathlib import Path
+
+import numpy as np
 import pandas as pd
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter, Config
+
+from toolbox_continu_inzicht.base.data_adapter import Config, DataAdapter
 from toolbox_continu_inzicht.fragility_curves import (
+    ChangeCrestHeightFragilityCurveOvertopping,
     FragilityCurveOvertopping,
     ShiftFragilityCurveOvertopping,
-    ChangeCrestHeightFragilityCurveOvertopping,
 )
 
 # %%

@@ -1,16 +1,16 @@
 from datetime import timedelta
+from typing import Optional
 from zoneinfo import ZoneInfo
 
-from pydantic.dataclasses import dataclass
-from typing import Optional
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 import pandas as pd
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht.base.aquo import read_aquo
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from toolbox_continu_inzicht.utils.datetime_functions import (
     datetime_from_string,
 )
-
 from toolbox_continu_inzicht.utils.fetch_functions import fetch_data_get
-from toolbox_continu_inzicht.base.aquo import read_aquo
 
 
 @dataclass(config={"arbitrary_types_allowed": True})

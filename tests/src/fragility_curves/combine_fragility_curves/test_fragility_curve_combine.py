@@ -2,13 +2,11 @@ from pathlib import Path
 
 import numpy as np
 
-
 from toolbox_continu_inzicht.base.config import Config
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
-
 from toolbox_continu_inzicht.fragility_curves import (
-    CombineFragilityCurvesIndependent,
     CombineFragilityCurvesDependent,
+    CombineFragilityCurvesIndependent,
     CombineFragilityCurvesWeightedSum,
 )
 

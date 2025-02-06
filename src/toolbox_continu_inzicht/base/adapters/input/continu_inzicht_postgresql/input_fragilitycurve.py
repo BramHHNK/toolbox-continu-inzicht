@@ -4,6 +4,7 @@ Data adapters voor het lezen van data uit de Continu Inzicht database
 
 import pandas as pd
 import sqlalchemy
+
 from toolbox_continu_inzicht.base.adapters.input.postgresql import (
     input_postgresql_database,
 )

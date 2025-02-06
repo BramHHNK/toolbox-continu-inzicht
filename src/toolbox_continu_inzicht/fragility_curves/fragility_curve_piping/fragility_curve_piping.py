@@ -1,13 +1,14 @@
-import pandas as pd
-from pydantic.dataclasses import dataclass
-from typing import Optional
 from pathlib import Path
+from typing import Optional
 
+import pandas as pd
 from probabilistic_piping import (
     ProbInput,
     ProbPipingFixedWaterlevelSimple,
 )
-from toolbox_continu_inzicht import FragilityCurve, DataAdapter, Config
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht import Config, DataAdapter, FragilityCurve
 
 
 # TODO: pas dit aan naar FragilityCurvePipingFixedWaterlevelSimplePerSection, en maak FragilityCurvePipingFixedWaterlevelSimple standaard voor meerdere secties

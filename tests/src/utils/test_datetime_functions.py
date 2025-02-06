@@ -1,7 +1,8 @@
 from datetime import datetime, timezone
+
 from toolbox_continu_inzicht.utils.datetime_functions import (
-    epoch_from_datetime,
     datetime_from_string,
+    epoch_from_datetime,
 )
 
 

@@ -1,9 +1,11 @@
 from abc import abstractmethod
-from pydantic.dataclasses import dataclass
-import numpy as np
-from toolbox_continu_inzicht import DataAdapter
 from typing import Optional
+
+import numpy as np
 import pandas as pd
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht import DataAdapter
 
 
 @dataclass(config={"arbitrary_types_allowed": True})

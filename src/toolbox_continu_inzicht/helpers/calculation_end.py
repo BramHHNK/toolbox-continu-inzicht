@@ -2,8 +2,9 @@
 End script voor Continu Inzicht Viewer
 """
 
-from toolbox_continu_inzicht import DataAdapter
 import pandas as pd
+
+from toolbox_continu_inzicht import DataAdapter
 
 
 def calculation_end(data_adapter: DataAdapter, output: str) -> None:

@@ -2,10 +2,12 @@
 Bepaal de belasting op een dijkvak
 """
 
-from pydantic.dataclasses import dataclass
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter
-import pandas as pd
 from typing import Optional
+
+import pandas as pd
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 
 
 @dataclass(config={"arbitrary_types_allowed": True})

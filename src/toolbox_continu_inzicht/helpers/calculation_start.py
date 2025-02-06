@@ -3,11 +3,11 @@ Start script voor Continu Inzicht Viewer
 """
 
 from datetime import datetime, timedelta, timezone
-from typing import Optional
-from typing import Tuple
-from toolbox_continu_inzicht import DataAdapter
+from typing import Optional, Tuple
 
 import pandas as pd
+
+from toolbox_continu_inzicht import DataAdapter
 
 
 def calculation_start(

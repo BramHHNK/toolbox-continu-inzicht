@@ -1,17 +1,17 @@
-from datetime import datetime, timedelta
 import warnings
-from pydantic.dataclasses import dataclass
-import pandas as pd
+from datetime import datetime, timedelta
 from typing import Optional
 
+import pandas as pd
+from pydantic.dataclasses import dataclass
+
+from toolbox_continu_inzicht.base.aquo import read_aquo
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from toolbox_continu_inzicht.loads.loads_matroos.get_matroos_locations import (
     get_matroos_locations,
     get_matroos_models,
 )
-from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 from toolbox_continu_inzicht.utils.fetch_functions import fetch_data_get
-from toolbox_continu_inzicht.base.aquo import read_aquo
-
 
 # dit is functie specifiek omdat waterlevel niet in de aquo standaard zit
 matroos_aquo_synoniem = {"water height": "waterlevel"}
