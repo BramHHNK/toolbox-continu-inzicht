@@ -5,10 +5,10 @@ __version__ = "0.0.3"
 # in alpha release zijn de versie gelijk aan de sprint nummers.
 
 # Hier alleen base functies
-from base import config, data_adapter, fragility_curve
-from base.config import Config
-from base.data_adapter import DataAdapter
-from base.fragility_curve import FragilityCurve
+from toolbox_continu_inzicht.base import config, data_adapter, fragility_curve
+from toolbox_continu_inzicht.base.config import Config
+from toolbox_continu_inzicht.base.data_adapter import DataAdapter
+from toolbox_continu_inzicht.base.fragility_curve import FragilityCurve
 
 # hier de hoofd modules, sub modules in de mapjes zelf
 from toolbox_continu_inzicht import (
