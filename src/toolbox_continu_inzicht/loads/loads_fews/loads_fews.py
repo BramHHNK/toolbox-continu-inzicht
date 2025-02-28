@@ -45,7 +45,7 @@ class LoadsFews:
         if "LoadsFews" not in global_variables:
             raise UserWarning(
                 "LoadsFews niet in "
-            ) # FIXME: Incomplete print-statement?
+            )  # FIXME: Incomplete print-statement?
 
         options = global_variables["LoadsFews"]
 
