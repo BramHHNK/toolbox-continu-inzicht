@@ -3,7 +3,7 @@ import warnings
 from pydantic.dataclasses import dataclass
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 import pandas as pd
-from typing import Optional, List
+from typing import Optional
 from toolbox_continu_inzicht.utils.datetime_functions import (
     datetime_from_string,
 )
@@ -108,7 +108,7 @@ class LoadsFews:
         return f"{host}:{port}/FewsWebServices/rest/{region}/v1/timeseries"
 
     def create_params(
-        self, calc_time: datetime, options: dict, moments: List, locations: pd.DataFrame
+        self, calc_time: datetime, options: dict, moments: list, locations: pd.DataFrame
     ) -> dict:
         """
         Maak een lijst van FEWS parameters om mee te sturen bij het ophalen van data.

@@ -4,7 +4,6 @@ Start script voor Continu Inzicht Viewer
 
 from datetime import datetime, timedelta, timezone
 from typing import Optional
-from typing import Tuple
 from toolbox_continu_inzicht import DataAdapter
 
 import pandas as pd
@@ -12,7 +11,7 @@ import pandas as pd
 
 def calculation_start(
     data_adapter: DataAdapter, output: str, calc_time: Optional[datetime] = None
-) -> Tuple[datetime, datetime]:
+) -> tuple[datetime, datetime]:
     """
     Start het berekeningsproces door de berekeningstijd in te stellen en de momenten te verwerken.
 

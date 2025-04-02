@@ -6,7 +6,6 @@ import pandas as pd
 import sqlalchemy
 
 from datetime import datetime
-from typing import Dict
 from sqlalchemy.engine import Engine
 from toolbox_continu_inzicht.utils.datetime_functions import epoch_from_datetime
 
@@ -170,7 +169,7 @@ def output_ci_postgresql_section_to_data(output_config: dict, df: pd.DataFrame) 
         else:
             raise UserWarning(f"Onbekende value_type: {value_type}.")
 
-    def get_failuremechanism_id(name: str, failuremechanism: Dict[str, int]) -> int:
+    def get_failuremechanism_id(name: str, failuremechanism: dict[str, int]) -> int:
         if name in failuremechanism:
             return failuremechanism[name]
         else:
