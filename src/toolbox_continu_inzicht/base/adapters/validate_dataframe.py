@@ -1,8 +1,7 @@
-from typing import Dict, Tuple
 import pandas as pd
 
 
-def validate_dataframe(df: pd.DataFrame, schema: Dict) -> Tuple[int, str]:
+def validate_dataframe(df: pd.DataFrame, schema: dict) -> tuple[int, str]:
     """
     Valideert een dataframe op basis van een schema.
     De kolommen met bijbehorende datatypes moeten in de dataframe terug komen.
