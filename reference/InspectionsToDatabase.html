@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>dataadapter – Toolbox continu inzicht</title>
+<title>inspectionstodatabase – Toolbox continu inzicht</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -172,19 +172,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter" id="toc-toolbox_continu_inzicht.DataAdapter" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.DataAdapter">DataAdapter</a>
+  <li><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase" id="toc-toolbox_continu_inzicht.inspections.InspectionsToDatabase" class="nav-link active" data-scroll-target="#toolbox_continu_inzicht.inspections.InspectionsToDatabase">InspectionsToDatabase</a>
   <ul class="collapse">
   <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.get_global_variable" id="toc-toolbox_continu_inzicht.DataAdapter.get_global_variable" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.get_global_variable">get_global_variable</a></li>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.init_logging" id="toc-toolbox_continu_inzicht.DataAdapter.init_logging" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.init_logging">init_logging</a></li>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.initialize_input_types" id="toc-toolbox_continu_inzicht.DataAdapter.initialize_input_types" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.initialize_input_types">initialize_input_types</a></li>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.initialize_output_types" id="toc-toolbox_continu_inzicht.DataAdapter.initialize_output_types" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.initialize_output_types">initialize_output_types</a></li>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.input" id="toc-toolbox_continu_inzicht.DataAdapter.input" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.input">input</a></li>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.output" id="toc-toolbox_continu_inzicht.DataAdapter.output" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.output">output</a></li>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.set_dataframe_adapter" id="toc-toolbox_continu_inzicht.DataAdapter.set_dataframe_adapter" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.set_dataframe_adapter">set_dataframe_adapter</a></li>
-  <li><a href="#toolbox_continu_inzicht.DataAdapter.set_global_variable" id="toc-toolbox_continu_inzicht.DataAdapter.set_global_variable" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.DataAdapter.set_global_variable">set_global_variable</a></li>
+  <li><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_default_styling" id="toc-toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_default_styling" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_default_styling">get_default_styling</a></li>
+  <li><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_possible_styling" id="toc-toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_possible_styling" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_possible_styling">get_possible_styling</a></li>
+  <li><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.log_exceptions" id="toc-toolbox_continu_inzicht.inspections.InspectionsToDatabase.log_exceptions" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.log_exceptions">log_exceptions</a></li>
+  <li><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.run" id="toc-toolbox_continu_inzicht.inspections.InspectionsToDatabase.run" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.run">run</a></li>
+  <li><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.set_default_styling" id="toc-toolbox_continu_inzicht.inspections.InspectionsToDatabase.set_default_styling" class="nav-link" data-scroll-target="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.set_default_styling">set_default_styling</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -196,38 +194,88 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="toolbox_continu_inzicht.DataAdapter" class="level1">
-<h1>DataAdapter</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>DataAdapter(<span class="va">self</span>, config)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Basis DataAdapter</p>
-<section id="attributes" class="level2">
-<h2 class="anchored" data-anchor-id="attributes">Attributes</h2>
+<section id="toolbox_continu_inzicht.inspections.InspectionsToDatabase" class="level1">
+<h1>InspectionsToDatabase</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>inspections.InspectionsToDatabase()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Combineert de inspectieresultaten met de opmaak en slaat deze op in de database.</p>
+<p>Met deze functie wordt de gehele geojson onderdeel van 1 tabel in de database. Bij grote lagen is het aan te raden om deze als aparte tabel op te slaan, de aanpak voor het opslaan van grotere lagen in de database is te vinden onder modules <code>inspectieresultaten</code> in de documentatie.</p>
+<section id="attributes" class="level2 doc-section doc-section-attributes">
+<h2 class="doc-section doc-section-attributes anchored" data-anchor-id="attributes">Attributes</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 42%">
+<col style="width: 42%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.config">config</a></td>
-<td></td>
+<td>data_adapter</td>
+<td>DataAdapter</td>
+<td>DataAdapter object</td>
 </tr>
 <tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.input_types">input_types</a></td>
-<td></td>
+<td>df_in_inspections</td>
+<td>Optional[pd.DataFrame | gpd.GeoDataFrame] | None</td>
+<td>Input DataFrame met inspectieresultaten.</td>
 </tr>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.logger">logger</a></td>
-<td></td>
+<td>df_in_legend</td>
+<td>Optional[pd.DataFrame] | None</td>
+<td>DataFrame met standaard opmaak informatie.</td>
 </tr>
 <tr class="even">
-<td><a href="#toolbox_continu_inzicht.base.data_adapter.DataAdapter.output_types">output_types</a></td>
-<td></td>
+<td>df_in_layers</td>
+<td>Optional[pd.DataFrame] | None</td>
+<td>DataFrame met de lagen informatie.</td>
+</tr>
+<tr class="odd">
+<td>df_out</td>
+<td>Optional[pd.DataFrame] | None</td>
+<td>Output DataFrame containing the filtered DataFrame.</td>
+</tr>
+<tr class="even">
+<td>legend_schema</td>
+<td>ClassVar[dict[str, str]]</td>
+<td>Schema DataFrame met de opmaak informatie</td>
+</tr>
+<tr class="odd">
+<td>layer_schema</td>
+<td>ClassVar[dict[str, str]]</td>
+<td>Schema DataFrame met de layer informatie</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="notes" class="level2 doc-section doc-section-notes">
+<h2 class="doc-section doc-section-notes anchored" data-anchor-id="notes">Notes</h2>
+<p>Default waarden te overschrijven in de global variables:</p>
+<ul>
+<li>max_rows = 10, Maximale toegestane rijen geodata in een database veld</li>
+<li>index = 0, Index van df_in_layers waarin de geodata wordt opgeslagen</li>
+</ul>
+<p>De layers tabel geeft de mogelijkheid om de meer configuratie door te geven aan de viewer. Als deze niet aanwezig is, worden standaard opties gebruikt. Hier moet minimaal de volgende kolommen in zitten:</p>
+<ul>
+<li>group_name: naam van de groep in de viewer waar de layer toegevoegd wordt.</li>
+<li>layer_name: naam van de laag in de viewer.</li>
+<li>layer_visible: of de laag direct zichtbaar is in de viewer (true), of dat hij moet worden aangezet door de gebruiker (false).</li>
+</ul>
+<p>Optionele kolommen voor de df_in_layers zijn:</p>
+<ul>
+<li>layer_type: type van de laag, wordt standaard gevuld als geojson.</li>
+<li>layer_tabel: naam van een overige tabel in de database die met geodaata is gevuld.</li>
+<li>layer_wms_url: str URL van een WMS service die gebruikt kan worden voor de laag. Bij het inladen worden de volgende lagen opgehaald:
+<ul>
+<li>layer_wms_layer: str</li>
+<li>layer_wms_style: str</li>
+</ul></li>
+</ul>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
@@ -240,109 +288,375 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.get_global_variable">get_global_variable</a></td>
-<td>Functie voor het ophalen van global variable.</td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.init_logging">init_logging</a></td>
-<td>Initialiseer de logger met de configuratie.</td>
-</tr>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.initialize_input_types">initialize_input_types</a></td>
+<td><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_default_styling">get_default_styling</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.initialize_output_types">initialize_output_types</a></td>
+<td><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_possible_styling">get_possible_styling</a></td>
+<td>Haal de mogelijke kolommen op voor de opmaak.</td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.log_exceptions">log_exceptions</a></td>
+<td>Stuurt exceptions eerst naar de logger van de DataAdapter</td>
+</tr>
+<tr class="even">
+<td><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.run">run</a></td>
+<td>Run het combineren van inspectieresultaten met opmaak voor het opslaan in de database.</td>
+</tr>
+<tr class="odd">
+<td><a href="#toolbox_continu_inzicht.inspections.InspectionsToDatabase.set_default_styling">set_default_styling</a></td>
 <td></td>
-</tr>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.input">input</a></td>
-<td>Gegeven de config, stuurt de juiste inputwaarde aan</td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.output">output</a></td>
-<td>Gegeven de config, stuurt de juiste inputwaarde aan</td>
-</tr>
-<tr class="odd">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.set_dataframe_adapter">set_dataframe_adapter</a></td>
-<td>Functie om een DataFrame mee te geven aan een DataAdapter met <code>type: python</code>.</td>
-</tr>
-<tr class="even">
-<td><a href="#toolbox_continu_inzicht.DataAdapter.set_global_variable">set_global_variable</a></td>
-<td>Functie voor het dynamisch overschrijven van global variabelen.</td>
 </tr>
 </tbody>
 </table>
-<section id="toolbox_continu_inzicht.DataAdapter.get_global_variable" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.get_global_variable">get_global_variable</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.get_global_variable(key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Functie voor het ophalen van global variable.</p>
+<section id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_default_styling" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_default_styling">get_default_styling</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>inspections.InspectionsToDatabase.get_default_styling()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_possible_styling" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.get_possible_styling">get_possible_styling</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>inspections.InspectionsToDatabase.get_possible_styling(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">type</span><span class="op">=</span><span class="va">None</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    dict_output<span class="op">=</span><span class="va">False</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Haal de mogelijke kolommen op voor de opmaak.</p>
 <section id="parameters" class="level4 doc-section doc-section-parameters">
-<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters:</h4>
-<p>key: str naam van de waarde om op te overschrijven</p>
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 77%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>type</td>
+<td>str | None</td>
+<td>Type van de laag, indien None worden alle kolommen opgehaald. Mogelijke waardes zijn: Polyline, Polygon, Marker, CircleMarker</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td>dict_output</td>
+<td>bool</td>
+<td>Als True, wordt een dictionary met de kolommen en hun type terug gegeven. Anders wordt een lijst met de kolommen terug gegeven.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="returns" class="level4 doc-section doc-section-returns">
-<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns:</h4>
-<p>value: Any Global variable value</p>
+<h4 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 26%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>list[str] | dict[str, dict]</td>
+<td>Een lijst met de mogelijke kolommen of een dictionary met de kolommen en hun type.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="notes-1" class="level4 doc-section doc-section-notes">
+<h4 class="doc-section doc-section-notes anchored" data-anchor-id="notes-1">Notes</h4>
+<p>De standaard waardes &amp; mogelijke opties zijn:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Polyline</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Option</td>
+<td>Type</td>
+<td>Default</td>
+<td>Description</td>
+</tr>
+<tr class="even">
+<td>color</td>
+<td>string</td>
+<td>#9e9e9e</td>
+<td>hexcode van lijn</td>
+</tr>
+<tr class="odd">
+<td>weight</td>
+<td>number</td>
+<td>3</td>
+<td>breedte lijn</td>
+</tr>
+<tr class="even">
+<td>opacity</td>
+<td>number</td>
+<td>1</td>
+<td>transparantie van lijn</td>
+</tr>
+<tr class="odd">
+<td>dashArray</td>
+<td>string</td>
+<td>null</td>
+<td>array voor dashed lijn</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Polygon</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Option</td>
+<td>Type</td>
+<td>Default</td>
+<td>Description</td>
+</tr>
+<tr class="even">
+<td>color</td>
+<td>string</td>
+<td>#9e9e9e</td>
+<td>hexcode van stroke</td>
+</tr>
+<tr class="odd">
+<td>weight</td>
+<td>number</td>
+<td>3</td>
+<td>breedte stroke</td>
+</tr>
+<tr class="even">
+<td>opacity</td>
+<td>number</td>
+<td>1</td>
+<td>transparantie van stroke</td>
+</tr>
+<tr class="odd">
+<td>dashArray</td>
+<td>string</td>
+<td>null</td>
+<td>array voor dashed stroke</td>
+</tr>
+<tr class="even">
+<td>fillColor</td>
+<td>string</td>
+<td>#9e9e9e</td>
+<td>hexcode van fill</td>
+</tr>
+<tr class="odd">
+<td>fillOpacity</td>
+<td>number</td>
+<td>1</td>
+<td>transparantie van fill</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Marker</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Option</td>
+<td>Type</td>
+<td>Default</td>
+<td>Description</td>
+</tr>
+<tr class="even">
+<td>color</td>
+<td>string</td>
+<td>#9e9e9e</td>
+<td>hexcode van stroke</td>
+</tr>
+<tr class="odd">
+<td>opacity</td>
+<td>number</td>
+<td>1</td>
+<td>transparantie van marker</td>
+</tr>
+<tr class="even">
+<td>fillColor</td>
+<td>string</td>
+<td>#9e9e9e</td>
+<td>hexcode van fill</td>
+</tr>
+<tr class="odd">
+<td>SVGname</td>
+<td>string</td>
+<td>null</td>
+<td>naam van de marker</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>CircleMarker</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Option</td>
+<td>Type</td>
+<td>Default</td>
+<td>Description</td>
+</tr>
+<tr class="even">
+<td>color</td>
+<td>string</td>
+<td>#9e9e9e</td>
+<td>hexcode van stroke</td>
+</tr>
+<tr class="odd">
+<td>weight</td>
+<td>number</td>
+<td>3</td>
+<td>breedte stroke</td>
+</tr>
+<tr class="even">
+<td>opacity</td>
+<td>number</td>
+<td>1</td>
+<td>transparantie van stroke</td>
+</tr>
+<tr class="odd">
+<td>dashArray</td>
+<td>string</td>
+<td>null</td>
+<td>array voor dashed stroke</td>
+</tr>
+<tr class="even">
+<td>fillColor</td>
+<td>string</td>
+<td>#9e9e9e</td>
+<td>hexcode van fill</td>
+</tr>
+<tr class="odd">
+<td>fillOpacity</td>
+<td>number</td>
+<td>1</td>
+<td>transparantie van fill</td>
+</tr>
+<tr class="even">
+<td>radius</td>
+<td>number</td>
+<td>10</td>
+<td>groote van circle</td>
+</tr>
+</tbody>
+</table>
+<p>Default waardes worden hier getoond, maar deze hebben geen invloed op de output. Om default aan te passen gebruik <code>set_default_styling(df)</code>.</p>
 </section>
 </section>
-<section id="toolbox_continu_inzicht.DataAdapter.init_logging" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.init_logging">init_logging</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.init_logging()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Initialiseer de logger met de configuratie.</p>
-<p>Voor logging zijn de volgende instellingen mogelijk: - name: naam van de logger - level: logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL) - mode: schrijfwijze van de logfile (w, a) - file: bestands naam om naar weg te schrijven logfile - history_file: logfile voor de history</p>
-<p>Als file en history_file geen absolute path zijn, dan worden ze in de rootdir van de configuratie opgeslagen. In het geval dat <code>file</code> opgegeven is, maar geen valide pad is, dan wordt er een logfile <code>hidden_logfile.log</code> aangemaakt in de rootdir.</p>
+<section id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.log_exceptions" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.log_exceptions">log_exceptions</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>inspections.InspectionsToDatabase.log_exceptions(method)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Stuurt exceptions eerst naar de logger van de DataAdapter</p>
 </section>
-<section id="toolbox_continu_inzicht.DataAdapter.initialize_input_types" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.initialize_input_types">initialize_input_types</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.initialize_input_types()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="toolbox_continu_inzicht.DataAdapter.initialize_output_types" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.initialize_output_types">initialize_output_types</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.initialize_output_types()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="toolbox_continu_inzicht.DataAdapter.input" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.input">input</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.<span class="bu">input</span>(<span class="bu">input</span>, schema<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Gegeven de config, stuurt de juiste inputwaarde aan</p>
+<section id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.run" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.run">run</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>inspections.InspectionsToDatabase.run(<span class="bu">input</span>, output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Run het combineren van inspectieresultaten met opmaak voor het opslaan in de database.</p>
 <section id="parameters-1" class="level4 doc-section doc-section-parameters">
-<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-1">Parameters:</h4>
-<p>input: str Naam van de DataAdapter die gebruikt wordt.</p>
-<p>opties: dict Extra informatie die ook naar de functie moet om het bestand te lezen.</p>
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-1">Parameters</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 5%">
+<col style="width: 87%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>input</td>
+<td>list[str]</td>
+<td>Naam van de Data Adapters met inspectieresultaten, opmaak en lagen (in die volgorde). Resultaten en opmaak zijn verplicht, lagen zijn optioneel. Indien er geen informatie is meegegeven, worden standaard waardes gebruikt.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td>output</td>
+<td>str</td>
+<td>Naam van Data adapter voor de output</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="notes-2" class="level4 doc-section doc-section-notes">
+<h4 class="doc-section doc-section-notes anchored" data-anchor-id="notes-2">Notes</h4>
+<p>…</p>
+</section>
+<section id="raises" class="level4 doc-section doc-section-raises">
+<h4 class="doc-section doc-section-raises anchored" data-anchor-id="raises">Raises</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 15%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>UserWarning</td>
+<td>Als er meer dan max_rows rijen zijn in de inspectieresultaten.</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
-<section id="toolbox_continu_inzicht.DataAdapter.output" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.output">output</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.output(output, df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Gegeven de config, stuurt de juiste inputwaarde aan</p>
-<section id="parameters-2" class="level4 doc-section doc-section-parameters">
-<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-2">Parameters:</h4>
-<p>output: Naam van de DataAdapter die gebruikt moet worden. df: pd.Dataframe pandas DataFrame om weg te schrijven.</p>
-<p>opties: dict Extra informatie die ook naar de functie moet om het bestand te schrijven.</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.DataAdapter.set_dataframe_adapter" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.set_dataframe_adapter">set_dataframe_adapter</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.set_dataframe_adapter(key, df, if_not_exist<span class="op">=</span><span class="st">'raise'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Functie om een DataFrame mee te geven aan een DataAdapter met <code>type: python</code>. Let er zelf op dat de kolomnamen en datatypes overeenkomen met de beoogde functie.</p>
-<section id="parameters-3" class="level4 doc-section doc-section-parameters">
-<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-3">Parameters:</h4>
-<p>key: str Naam van de DataAdapter zoals opgegeven in de configuratie-YAML</p>
-<p>df: pd.Dataframe Object om mee te geven</p>
-<p>if_not_exist: str[raise, create] Geeft aan wat te doen als de DataAdapter niet bestaat, bij raise krijg je een error, bij create wordt er een nieuwe DataAdapter aangemaakt.</p>
-</section>
-</section>
-<section id="toolbox_continu_inzicht.DataAdapter.set_global_variable" class="level3">
-<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.DataAdapter.set_global_variable">set_global_variable</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>DataAdapter.set_global_variable(key, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Functie voor het dynamisch overschrijven van global variabelen.</p>
-<section id="parameters-4" class="level4 doc-section doc-section-parameters">
-<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-4">Parameters:</h4>
-<p>key: str Naam van de waarde om te overschrijven.</p>
-<p>value: Any Object om mee te geven.</p>
+<section id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.set_default_styling" class="level3">
+<h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.inspections.InspectionsToDatabase.set_default_styling">set_default_styling</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>inspections.InspectionsToDatabase.set_default_styling()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 </section>
 </section>

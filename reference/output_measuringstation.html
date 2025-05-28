@@ -129,29 +129,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../install.html"> 
 <span class="menu-text">Installeren</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-voorbeelden" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Voorbeelden</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-voorbeelden">    
-        <li>
-    <a class="dropdown-item" href="../examples/notebooks/1.proof_of_concept.html">
- <span class="dropdown-text">Architectuur voorbeeld</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../voorbeelden.html"> 
+<span class="menu-text">Voorbeelden</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../examples/notebooks/2.belastingen_inladen.html">
- <span class="dropdown-text">Belastingen inladen</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../examples/notebooks/3.fragility_curve_overtopping.html">
- <span class="dropdown-text">Fragility Curve Overtopping</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../examples/notebooks/4.adjust_integrated_statistics.html">
- <span class="dropdown-text">Aanpassen van geïntegreerde fragility curves</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../modules_index.html"> 
 <span class="menu-text">Modules</span></a>
@@ -161,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Python API</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../contact.html"> 
+    <a class="nav-link" href="../overig/contact.html"> 
 <span class="menu-text">Overig</span></a>
   </li>  
 </ul>
@@ -259,18 +240,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 database: "continuinzicht"
 schema: "continuinzicht_demo_whatif"</code></pre>
 <p>Args:</p>
-<pre><code>* output_config (dict): configuratie opties
-* df (DataFrame):
-
-- id: int64                 : id van de conditie
-- stateid: int64            : id van de status van een conditie
-- objectid: int64           : id van het object waartoe de conditie behoort (altijd in combinatie met objecttype)
-- objecttype: str           : het type object waartoe de conditie behoort (bijv. een 'section' of 'measuringstation')
-- upperboundary: float64    : de bovengrenswaarde van de status van een conditie (overgang van de betreffende status naar de volgende status)
-- name: str                 : naam van de status van de conditie
-- description: str          : omschrijving van de status van de conditie
-- color: str                : HEX kleurcode van de kleur van de status van de conditie
-- statevalue: float64       : middenwaarde van statusovergangen (specifiek voor objecttype 'sections')</code></pre>
+<p>output_config (dict): configuratie opties df (DataFrame):</p>
+<ul>
+<li>id: int64 : id van de conditie</li>
+<li>stateid: int64 : id van de status van een conditie</li>
+<li>objectid: int64 : id van het object waartoe de conditie behoort (altijd in combinatie met objecttype)</li>
+<li>objecttype: str : het type object waartoe de conditie behoort (bijv. een ‘section’ of ‘measuringstation’)</li>
+<li>upperboundary: float64 : de bovengrenswaarde van de status van een conditie (overgang van de betreffende status naar de volgende status)</li>
+<li>name: str : naam van de status van de conditie</li>
+<li>description: str : omschrijving van de status van de conditie</li>
+<li>color: str : HEX kleurcode van de kleur van de status van de conditie</li>
+<li>statevalue: float64 : middenwaarde van statusovergangen (specifiek voor objecttype ‘sections’)</li>
+</ul>
 <p><strong>Opmerking:</strong></p>
 <p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
 <ul>
@@ -287,10 +268,10 @@ schema: "continuinzicht_demo_whatif"</code></pre>
 </section>
 <section id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation" class="level3">
 <h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation">output_ci_postgresql_measuringstation</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    df</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    df</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Schrijft voor meetstations de classificatie data naar de Continu Inzicht database (tabel: states).</p>
 <p>Yaml example:</p>
 <pre><code>type: ci_postgresql_measuringstation
@@ -323,10 +304,10 @@ schema: "continuinzicht_demo_whatif"</code></pre>
 </section>
 <section id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation_to_data" class="level3">
 <h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation_to_data">output_ci_postgresql_measuringstation_to_data</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation_to_data(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    df</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_measuringstation_to_data(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    df</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Schrijft voor meetstations de belasting data naar de Continu Inzicht database (tabel: data).</p>
 <p>Yaml example:</p>
 <pre><code>type: ci_postgresql_measuringstation_to_data
@@ -358,21 +339,22 @@ unit_conversion_factor: 0.01</code></pre>
 </section>
 <section id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_moments" class="level3">
 <h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_moments">output_ci_postgresql_to_moments</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_moments(</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    df</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_moments(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    df</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Schrijft moments naar Continu Inzicht database (tabel: moments)</p>
 <p>Yaml example:</p>
 <pre><code>type: ci_postgresql_to_moments
 database: "continuinzicht"
 schema: "continuinzicht_demo_whatif"</code></pre>
 <p>Args:</p>
-<pre><code>* output_config (dict): configuratie opties
-* df (DataFrame):
-
-- date_time: int64      : datum/tijd van het huidige moment
-- calc_time: int64      : datum/tijd van eerst volgende rekenstap</code></pre>
+<p>output_config (dict): configuratie opties</p>
+<p>df (DataFrame):</p>
+<ul>
+<li>date_time: int64 : datum/tijd van het huidige moment</li>
+<li>calc_time: int64 : datum/tijd van eerst volgende rekenstap</li>
+</ul>
 <p><strong>Opmerking:</strong></p>
 <p>In de <code>.env</code> environment bestand moeten de volgende parameters staan:</p>
 <ul>
@@ -389,10 +371,10 @@ schema: "continuinzicht_demo_whatif"</code></pre>
 </section>
 <section id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_states" class="level3">
 <h3 class="anchored" data-anchor-id="toolbox_continu_inzicht.base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_states">output_ci_postgresql_to_states</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_states(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    df</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>base.adapters.output.continu_inzicht_postgresql.output_measuringstation.output_ci_postgresql_to_states(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    output_config</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    df</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Schrijft voor meetstations de classificatie data naar de Continu Inzicht database (tabel: states).</p>
 <p>Yaml example:</p>
 <pre><code>type: ci_postgresql_to_states
