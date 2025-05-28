@@ -1,5 +1,5 @@
 from datetime import timedelta
-from typing import Any, ClassVar, Optional
+from typing import Any, ClassVar
 from zoneinfo import ZoneInfo
 
 import pandas as pd

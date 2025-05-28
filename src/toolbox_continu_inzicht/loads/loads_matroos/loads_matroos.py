@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 import warnings
 from pydantic.dataclasses import dataclass
 import pandas as pd
-from typing import Optional
 from pathlib import Path
 import tempfile
 import xarray as xr

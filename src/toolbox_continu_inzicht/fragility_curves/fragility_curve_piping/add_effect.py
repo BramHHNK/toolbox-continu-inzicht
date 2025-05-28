@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pandas as pd
 from toolbox_continu_inzicht import DataAdapter
 from toolbox_continu_inzicht.fragility_curves import (

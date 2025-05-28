@@ -1,5 +1,5 @@
 from dataclasses import field
-from typing import Callable, ClassVar, Optional
+from typing import Callable, ClassVar
 
 import numpy as np
 import pandas as pd
