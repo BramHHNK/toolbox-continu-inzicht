@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pandas as pd
 from pydantic.dataclasses import dataclass
 
@@ -15,8 +13,8 @@ class LoadsCIWhatIf(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     def run(self, input: str, output: str) -> None:
         """

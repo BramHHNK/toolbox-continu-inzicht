@@ -5,7 +5,7 @@ Bepaal de technische faalkans van een dijkvak
 from pydantic.dataclasses import dataclass
 from toolbox_continu_inzicht.base.base_module import ToolboxBase
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 
@@ -20,9 +20,9 @@ class SectionsExpertJudgementFailureprobability(ToolboxBase):
     ----------
     data_adapter : DataAdapter
         De data adapter die wordt gebruikt om de data in te laden en op te slaan.
-    df_in_section_expertjudgement : Optional[pd.DataFrame] | None
+    df_in_section_expertjudgement : pd.DataFrame | None
         Dataframe met beheerdersoordeel voor de dijkvak.
-    df_out : Optional[pd.DataFrame] | None
+    df_out : pd.DataFrame | None
         Dataframe met faalkans van een dijkvak.
     input_beheerdersoordeel_schema:  ClassVar[dict[str, str | list[str]]]
         Schema voor beheerdersoordeel voor de dijkvak.
@@ -55,8 +55,8 @@ class SectionsExpertJudgementFailureprobability(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in_section_expertjudgement: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in_section_expertjudgement: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     # Beheerdersoordeel per dijkvak
     input_beheerdersoordeel_schema: ClassVar[dict[str, str | list[str]]] = {

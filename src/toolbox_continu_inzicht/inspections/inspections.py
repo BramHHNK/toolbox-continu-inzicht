@@ -1,7 +1,7 @@
 import json
 import warnings
 from pathlib import Path
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import geopandas as gpd
 import numpy as np
@@ -20,16 +20,16 @@ class ClassifyInspections(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         DataAdapter object
-    df_in: Optional[pd.DataFrame | gpd.GeoDataFrame] | None
+    df_in: pd.DataFrame | gpd.GeoDataFrame | None
         Input DataFrame om te classificeren
-    df_styling: Optional[pd.DataFrame] | None
+    df_styling: pd.DataFrame | None
         Input DataFrame met opmaak informatie
-    df_default_styling: Optional[pd.DataFrame] | None
+    df_default_styling: pd.DataFrame | None
         DataFrame met standaard opmaak informatie, wordt gebruikt als er geen opmaak informatie is meegegeven
         Beschikbaar via get_default_styling() en te vervangen met set_default_styling(df)
-    df_out: Optional[gpd.GeoDataFrame] | None
+    df_out: gpd.GeoDataFrame | None
         Output DataFrame containing the filtered DataFrame.
-    df_legend_out: Optional[pd.DataFrame] | None
+    df_legend_out: pd.DataFrame | None
         Output DataFrame containing the legend information.
     styling_schema: ClassVar[dict[str, str]]
         Schema DataFrame met de opmaak informatie
@@ -68,11 +68,11 @@ class ClassifyInspections(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_in: Optional[pd.DataFrame | gpd.GeoDataFrame] | None = None
-    df_styling: Optional[pd.DataFrame] | None = None
-    df_default_styling: Optional[pd.DataFrame] | None = None
-    df_out: Optional[gpd.GeoDataFrame] | None = None
-    df_legend_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | gpd.GeoDataFrame | None = None
+    df_styling: pd.DataFrame | None = None
+    df_default_styling: pd.DataFrame | None = None
+    df_out: gpd.GeoDataFrame | None = None
+    df_legend_out: pd.DataFrame | None = None
     styling_schema: ClassVar[dict[str, str]] = {
         "lower_boundary": ["float", "int", "object"],
         "color": "object",
@@ -586,13 +586,13 @@ class InspectionsToDatabase(ClassifyInspections):
     ----------
     data_adapter: DataAdapter
         DataAdapter object
-    df_in_inspections: Optional[pd.DataFrame | gpd.GeoDataFrame] | None
+    df_in_inspections: pd.DataFrame | gpd.GeoDataFrame | None
         Input DataFrame met inspectieresultaten.
-    df_in_legend: Optional[pd.DataFrame] | None
+    df_in_legend: pd.DataFrame | None
         DataFrame met standaard opmaak informatie.
-    df_in_layers: Optional[pd.DataFrame] | None
+    df_in_layers: pd.DataFrame | None
         DataFrame met de lagen informatie.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Output DataFrame containing the filtered DataFrame.
     legend_schema: ClassVar[dict[str, str]]
         Schema DataFrame met de opmaak informatie
@@ -625,10 +625,10 @@ class InspectionsToDatabase(ClassifyInspections):
     """
 
     data_adapter: DataAdapter
-    df_in_inspections: Optional[pd.DataFrame | gpd.GeoDataFrame] | None = None
-    df_in_legend: Optional[pd.DataFrame] | None = None
-    df_in_layers: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in_inspections: pd.DataFrame | gpd.GeoDataFrame | None = None
+    df_in_legend: pd.DataFrame | None = None
+    df_in_layers: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
     legend_schema: ClassVar[dict[str, str]] = {
         "id": "int",
         "color": "object",

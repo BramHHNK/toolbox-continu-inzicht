@@ -1,4 +1,4 @@
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 from pydantic.dataclasses import dataclass
@@ -17,7 +17,7 @@ class ExceedanceFrequencyCurve(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         DataAdapter object om data in te laden
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame met de overschrijdingsfrequentiecurve
     lower_limit: float
         Ondergrens voor de overschrijdingsfrequentie, standaard 1e-200
@@ -26,7 +26,7 @@ class ExceedanceFrequencyCurve(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_out: Optional[pd.DataFrame] | None = None
+    df_out: pd.DataFrame | None = None
     lower_limit: float = 1e-200
     exceedance_frequency_curve_schema: ClassVar[dict[str, str]] = {
         "hydraulicload": float,

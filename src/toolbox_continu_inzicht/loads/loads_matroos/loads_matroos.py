@@ -36,9 +36,9 @@ class LoadsMatroos(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         Data adapter object for input and output data.
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         Input dataframe containing measurement location codes.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Output dataframe containing processed data.
     url_retrieve_series_noos: str
         URL for retrieving series from Noos server.
@@ -50,8 +50,8 @@ class LoadsMatroos(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     url_retrieve_series_noos: str = "noos.matroos.rws.nl/direct/get_series.php?"
     url_retrieve_series_matroos: str = "matroos.rws.nl/direct/get_series.php?"
@@ -389,11 +389,11 @@ class LoadsMatroosNetCDF(LoadsMatroos):
     ----------
     data_adapter: DataAdapter
         Data adapter object for input and output data.
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         Input dataframe containing measurement location codes.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Output dataframe containing processed data.
-    ds_in: Optional[xr.Dataset] | None
+    ds_in: xr.Dataset | None
         Input xarray dataset containing forecast data from matroos.
     url_retrieve_series_noos: str
         URL for retrieving series from Noos server.
@@ -405,9 +405,9 @@ class LoadsMatroosNetCDF(LoadsMatroos):
 
     data_adapter: DataAdapter
 
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
-    ds_in: Optional[xr.Dataset] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
+    ds_in: xr.Dataset | None = None
 
     url_retrieve_series_noos: str = "noos.matroos.rws.nl/direct/get_netcdf.php?"
     url_retrieve_series_matroos: str = "matroos.rws.nl/direct/get_netcdf.php?"

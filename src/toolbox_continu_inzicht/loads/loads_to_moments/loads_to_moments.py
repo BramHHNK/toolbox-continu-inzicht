@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 import pandas.api.types as ptypes
@@ -19,9 +19,9 @@ class LoadsToMoments(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         Een object van de klasse DataAdapter.
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         Het invoerdataframe met waterstandsgegevens. Standaard is dit None.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Het uitvoerdataframe met de resulterende momenten. Standaard is dit None.
 
     input_schema_loads: ClassVar[dict[str, str | list[str]]]
@@ -42,8 +42,8 @@ class LoadsToMoments(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     input_schema_loads: ClassVar[dict[str, str | list[str]]] = {
         "measurement_location_id": "int64",

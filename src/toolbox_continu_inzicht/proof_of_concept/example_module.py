@@ -1,4 +1,4 @@
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 from pydantic.dataclasses import dataclass
@@ -16,9 +16,9 @@ class ValuesDivideTwo(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         De data adapter die de input en output regelt
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         De input data
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         De output data
     input_schema: ClassVar[dict[str, str]]
         De input schema
@@ -26,8 +26,8 @@ class ValuesDivideTwo(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     input_schema: ClassVar[dict[str, str]] = {
         "value": "float",
@@ -61,9 +61,9 @@ class ValuesTimesTwo(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         De data adapter die de input en output regelt
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         De input data
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         De output data
     input_schema: ClassVar[dict[str, str]]
         De input schema
@@ -71,8 +71,8 @@ class ValuesTimesTwo(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     input_schema: ClassVar[dict[str, str]] = {
         "value": "float",

@@ -27,19 +27,19 @@ class FragilityCurvePipingFixedWaterlevel(FragilityCurve):
     ----------
     data_adapter : DataAdapter
         Adapter for handling data input and output operations.
-    df_prob_input : Optional[pd.DataFrame] | None
+    df_prob_input : pd.DataFrame | None
         DataFrame containing probabilistic input data.
-    df_hydraulicload : Optional[pd.DataFrame] | None
+    df_hydraulicload : pd.DataFrame | None
         DataFrame containing hydraulic load data.
-    df_out : Optional[pd.DataFrame] | None
+    df_out : pd.DataFrame | None
         Output DataFrame containing the final fragility curve.
-    df_result_uplift : Optional[pd.DataFrame] | None
+    df_result_uplift : pd.DataFrame | None
         DataFrame containing the uplift mechanism results.
-    df_result_heave : Optional[pd.DataFrame] | None
+    df_result_heave : pd.DataFrame | None
         DataFrame containing the heave mechanism results.
-    df_result_sellmeijer : Optional[pd.DataFrame] | None
+    df_result_sellmeijer : pd.DataFrame | None
         DataFrame containing the Sellmeijer mechanism results.
-    df_result_combined : Optional[pd.DataFrame] | None
+    df_result_combined : pd.DataFrame | None
         DataFrame containing the combined mechanism results.
 
     Notes
@@ -51,14 +51,14 @@ class FragilityCurvePipingFixedWaterlevel(FragilityCurve):
     """
 
     data_adapter: DataAdapter
-    df_prob_input: Optional[pd.DataFrame] | None = None
-    df_hydraulicload: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_prob_input: pd.DataFrame | None = None
+    df_hydraulicload: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
-    df_result_uplift: Optional[pd.DataFrame] | None = None
-    df_result_heave: Optional[pd.DataFrame] | None = None
-    df_result_sellmeijer: Optional[pd.DataFrame] | None = None
-    df_result_combined: Optional[pd.DataFrame] | None = None
+    df_result_uplift: pd.DataFrame | None = None
+    df_result_heave: pd.DataFrame | None = None
+    df_result_sellmeijer: pd.DataFrame | None = None
+    df_result_combined: pd.DataFrame | None = None
 
     def run(self, input: list[str], output: str) -> None:
         """
@@ -160,11 +160,11 @@ class FragilityCurvePipingMultiple(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         DataAdapter object
-    df_prob_input: Optional[pd.DataFrame] | None
+    df_prob_input: pd.DataFrame | None
         DataFrame met input voor de probabilistische berekening.
-    df_hydraulicload: Optional[pd.DataFrame] | None
+    df_hydraulicload: pd.DataFrame | None
         DataFrame met waterlevel data.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame met de output van de fragility curve.
     fragility_curve_function_simple: FragilityCurve
         Functie die de fragility curve berekent.
@@ -181,9 +181,9 @@ class FragilityCurvePipingMultiple(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_prob_input: Optional[pd.DataFrame] | None = None
-    df_hydraulicload: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_prob_input: pd.DataFrame | None = None
+    df_hydraulicload: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     fragility_curve_function_simple: FragilityCurve = (
         FragilityCurvePipingFixedWaterlevel

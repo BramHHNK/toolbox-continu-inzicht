@@ -23,9 +23,9 @@ class LoadsWaterinfo(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         De data adapter voor het ophalen en opslaan van gegevens.
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         Dataframe met meetlocaties.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Dataframe met belastinggegevens.
     url: str
         De url van de Waterinfo API.
@@ -40,8 +40,8 @@ class LoadsWaterinfo(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     url: str = "https://waterinfo.rws.nl/api/chart/get"
 

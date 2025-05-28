@@ -5,7 +5,7 @@ Bepaal de faalkans van een dijkvak
 from pydantic.dataclasses import dataclass
 from toolbox_continu_inzicht.base.base_module import ToolboxBase
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 
@@ -19,9 +19,9 @@ class SectionsCriticalFailureprobability(ToolboxBase):
     ----------
     data_adapter : DataAdapter
         DataAdapter object voor het verwerken van gegevens.
-    df_in_failureprobability : Optional[pd.DataFrame] | None
+    df_in_failureprobability : pd.DataFrame | None
         Invoer DataFrame met faalkans per dijkvak. Standaardwaarde is None.
-    df_out : Optional[pd.DataFrame] | None
+    df_out : pd.DataFrame | None
         Uitvoer DataFrame met faalkans per dijkvak. Standaardwaarde is None.
     input_schema_failureprobability : ClassVar[dict[str, str]]
         Schema voor de invoer van de faalkans per dijkvak.
@@ -53,8 +53,8 @@ class SectionsCriticalFailureprobability(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_in_failureprobability: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in_failureprobability: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     # faalkans per moment per dijkvak
     input_schema_failureprobability: ClassVar[dict[str, str]] = {

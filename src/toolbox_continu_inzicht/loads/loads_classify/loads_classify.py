@@ -1,4 +1,4 @@
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 from pydantic.dataclasses import dataclass
@@ -16,11 +16,11 @@ class LoadsClassify(ToolboxBase):
     ----------
     data_adapter : DataAdapter
         De data adapter die wordt gebruikt om de data in te laden en op te slaan.
-    df_in_thresholds : Optional[pd.DataFrame] | None
+    df_in_thresholds : pd.DataFrame | None
         Dataframe met drempelwaarden per meetlocatie.
-    df_in_loads : Optional[pd.DataFrame] | None
+    df_in_loads : pd.DataFrame | None
         Dataframe met belasting per moment per meetlocaties.
-    df_out : Optional[pd.DataFrame] | None
+    df_out : pd.DataFrame | None
         Dataframe met geclassificeerde waterstanden voor opgegeven momenten.
     input_schema_thresholds : ClassVar[dict[str, str]]
         Schema voor drempelwaarden per meetlocatie.
@@ -56,9 +56,9 @@ class LoadsClassify(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in_thresholds: Optional[pd.DataFrame] | None = None
-    df_in_loads: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in_thresholds: pd.DataFrame | None = None
+    df_in_loads: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     # Lijst met drempelwaarden per meetlocatie
     input_schema_thresholds: ClassVar[dict[str, str]] = {

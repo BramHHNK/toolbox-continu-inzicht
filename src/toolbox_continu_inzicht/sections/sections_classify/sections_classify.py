@@ -2,7 +2,7 @@
 Bepaal de status van een dijkvak
 """
 
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 from pydantic.dataclasses import dataclass
@@ -20,11 +20,11 @@ class SectionsClassify(ToolboxBase):
     ----------
     data_adapter : DataAdapter
         De data adapter die wordt gebruikt om de data in te laden en op te slaan.
-    df_in_thresholds : Optional[pd.DataFrame] | None
+    df_in_thresholds : pd.DataFrame | None
         Dataframe met klassegrenzen per dijkvak.
-    df_in_failureprobability : Optional[pd.DataFrame] | None
+    df_in_failureprobability : pd.DataFrame | None
         Dataframe met faalkans per moment per dijkvak.
-    df_out : Optional[pd.DataFrame] | None
+    df_out : pd.DataFrame | None
         Dataframe met geclassificeerde faalkansen per dijkvak.
     input_schema_thresholds : ClassVar[dict[str, str]]
         Schema voor klassegrenzen per dijkvak.
@@ -69,9 +69,9 @@ class SectionsClassify(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in_thresholds: Optional[pd.DataFrame] | None = None
-    df_in_failureprobability: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in_thresholds: pd.DataFrame | None = None
+    df_in_failureprobability: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     # klassegrenzen per dijkvak
     input_schema_thresholds: ClassVar[dict[str, str]] = {

@@ -3,14 +3,13 @@ Start script voor Continu Inzicht Viewer
 """
 
 from datetime import datetime, timedelta, timezone
-from typing import Optional
 from toolbox_continu_inzicht import DataAdapter
 
 import pandas as pd
 
 
 def calculation_start(
-    data_adapter: DataAdapter, output: str, calc_time: Optional[datetime] = None
+    data_adapter: DataAdapter, output: str, calc_time: datetime | None = None
 ) -> tuple[datetime, datetime]:
     """
     Start het berekeningsproces door de berekeningstijd in te stellen en de momenten te verwerken.
@@ -22,7 +21,7 @@ def calculation_start(
     Parameters:
     data_adapter (DataAdapter): Een instantie van DataAdapter die wordt gebruikt om de uitvoer te verwerken en globale variabelen in te stellen.
     output (str): De uitvoerstring die door de DataAdapter wordt gebruikt.
-    calc_time (Optional[datetime]): De optionele berekeningstijd. Als deze niet is opgegeven, wordt de huidige tijd gebruikt.
+    calc_time (datetime | None): De optionele berekeningstijd. Als deze niet is opgegeven, wordt de huidige tijd gebruikt.
 
     Result:
     Tuple[datetime, datetime]: Een tuple met de minimale en maximale datums en tijden die zijn berekend.

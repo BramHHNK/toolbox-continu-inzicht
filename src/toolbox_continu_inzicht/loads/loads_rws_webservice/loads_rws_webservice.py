@@ -1,6 +1,5 @@
 import warnings
 from datetime import datetime, timedelta
-from typing import Optional
 
 import pandas as pd
 from pydantic.dataclasses import dataclass
@@ -27,9 +26,9 @@ class LoadsWaterwebservicesRWS(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         De data adapter voor het ophalen en opslaan van gegevens.
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         Het invoerdataframe.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Het uitvoerdataframe.
     url_retrieve_observations: str
         De url voor het ophalen van waarnemingen.
@@ -38,8 +37,8 @@ class LoadsWaterwebservicesRWS(ToolboxBase):
 
     data_adapter: DataAdapter
 
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     url_retrieve_observations: str = "https://waterwebservices.rijkswaterstaat.nl/ONLINEWAARNEMINGENSERVICES_DBO/OphalenWaarnemingen"
 

@@ -37,14 +37,14 @@ class ShiftFragilityCurvePipingFixedWaterlevel(FragilityCurvePipingFixedWaterlev
     """
 
     data_adapter: DataAdapter
-    df_prob_input: Optional[pd.DataFrame] | None = None
-    df_hydraulicload: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_prob_input: pd.DataFrame | None = None
+    df_hydraulicload: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
-    df_result_uplift: Optional[pd.DataFrame] | None = None
-    df_result_heave: Optional[pd.DataFrame] | None = None
-    df_result_sellmeijer: Optional[pd.DataFrame] | None = None
-    df_result_combined: Optional[pd.DataFrame] | None = None
+    df_result_uplift: pd.DataFrame | None = None
+    df_result_heave: pd.DataFrame | None = None
+    df_result_sellmeijer: pd.DataFrame | None = None
+    df_result_combined: pd.DataFrame | None = None
 
     def run(self, input: list[str], output: str, effect: float) -> None:
         """

@@ -24,13 +24,13 @@ class FragilityCurveOvertopping(FragilityCurve):
     ----------
     data_adapter: DataAdapter
         DataAdapter object
-    df_slopes: Optional[pd.DataFrame] | None
+    df_slopes: pd.DataFrame | None
         DataFrame met helling data.
-    df_profile: Optional[pd.DataFrame] | None
+    df_profile: pd.DataFrame | None
         DataFrame met profiel data.
-    df_bed_levels: Optional[pd.DataFrame] | None
+    df_bed_levels: pd.DataFrame | None
         DataFrame met bed level data.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame met de resultaten van de berekening.
 
     Notes
@@ -59,10 +59,10 @@ class FragilityCurveOvertopping(FragilityCurve):
     """
 
     data_adapter: DataAdapter
-    df_slopes: Optional[pd.DataFrame] | None = None
-    df_profile: Optional[pd.DataFrame] | None = None
-    df_bed_levels: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_slopes: pd.DataFrame | None = None
+    df_profile: pd.DataFrame | None = None
+    df_bed_levels: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     def run(self, input: list[str], output: str) -> None:
         """
@@ -221,11 +221,11 @@ class FragilityCurveOvertoppingMultiple(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         DataAdapter object
-    df_slopes: Optional[pd.DataFrame] | None
+    df_slopes: pd.DataFrame | None
         DataFrame met hellingsdata.
-    df_bed_levels: Optional[pd.DataFrame] | None
+    df_bed_levels: pd.DataFrame | None
         DataFrame met bed level data.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame met de resultaten van de berekening.
     fragility_curve_function: FragilityCurve
         FragilityCurve object
@@ -261,9 +261,9 @@ class FragilityCurveOvertoppingMultiple(ToolboxBase):
 
     # df_slopes, df_bed_levels, df_out, lower_limit, effect, measure_id
     data_adapter: DataAdapter
-    df_slopes: Optional[pd.DataFrame] | None = None
-    df_bed_levels: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_slopes: pd.DataFrame | None = None
+    df_bed_levels: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     fragility_curve_function: FragilityCurve = FragilityCurveOvertopping
     effect: float | None = None

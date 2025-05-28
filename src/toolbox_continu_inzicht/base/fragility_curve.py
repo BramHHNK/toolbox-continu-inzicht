@@ -1,4 +1,4 @@
-from typing import Callable, ClassVar, Optional
+from typing import Callable, ClassVar
 import warnings
 
 import numpy as np
@@ -19,9 +19,9 @@ class FragilityCurve(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         DataAdapter object om data in te laden
-    hydraulicload: Optional[np.ndarray] | None
+    hydraulicload: np.ndarray | None
         Array met de belastingen
-    failure_probability: Optional[np.ndarray] | None
+    failure_probability: np.ndarray | None
         Array met de faalkansen
     lower_limit: float
         Ondergrens voor de interpolatie van de faalkans, standaard 1e-200
@@ -34,8 +34,8 @@ class FragilityCurve(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    hydraulicload: Optional[np.ndarray] | None = None
-    failure_probability: Optional[np.ndarray] | None = None
+    hydraulicload: np.ndarray | None = None
+    failure_probability: np.ndarray | None = None
     lower_limit: float = 1e-200
     interp_func: Callable = log_interpolate_1d
     enforce_monotonic: bool = True

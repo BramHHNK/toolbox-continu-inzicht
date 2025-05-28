@@ -6,7 +6,7 @@ from pydantic.dataclasses import dataclass
 from toolbox_continu_inzicht.base.base_module import ToolboxBase
 from toolbox_continu_inzicht.base.data_adapter import DataAdapter
 import pandas as pd
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 
 @dataclass(config={"arbitrary_types_allowed": True})
@@ -18,13 +18,13 @@ class SectionsLoads(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         DataAdapter: De data adapter.
-    df_in_sections: Optional[pd.DataFrame] | None
+    df_in_sections: pd.DataFrame | None
         DataFrame: lijst met dijkvakken.
-    df_in_loads: Optional[pd.DataFrame] | None
+    df_in_loads: pd.DataFrame | None
         DataFrame: belasting per moment per meetlocaties.
-    df_in_section_fractions: Optional[pd.DataFrame] | None
+    df_in_section_fractions: pd.DataFrame | None
         DataFrame: koppeling van de maatgevende meetlocaties per dijkvak .
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame: uitvoer.
     input_schema_sections: ClassVar[dict[str, str]]
         Schema voor de lijst met dijkvakken.
@@ -74,10 +74,10 @@ class SectionsLoads(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_in_sections: Optional[pd.DataFrame] | None = None
-    df_in_loads: Optional[pd.DataFrame] | None = None
-    df_in_section_fractions: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in_sections: pd.DataFrame | None = None
+    df_in_loads: pd.DataFrame | None = None
+    df_in_section_fractions: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     # Lijst met dijkvakken
     input_schema_sections: ClassVar[dict[str, str]] = {"id": "int64", "name": "object"}

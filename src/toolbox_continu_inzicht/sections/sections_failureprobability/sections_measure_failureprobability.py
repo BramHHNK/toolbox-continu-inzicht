@@ -2,7 +2,7 @@
 Bepaal de faalkans door een maatregel van een dijkvak
 """
 
-from typing import ClassVar, Optional
+from typing import ClassVar
 
 import pandas as pd
 from pydantic.dataclasses import dataclass
@@ -22,11 +22,11 @@ class SectionsMeasureFailureprobability(SectionsTechnicalFailureprobability):
     ----------
     data_adapter : DataAdapter
         De data adapter voor het in- en uitvoeren van gegevens.
-    df_in_section_loads : Optional[pd.DataFrame] | None
+    df_in_section_loads : pd.DataFrame | None
         DataFrame: Tijdreeks met belasting op het dijkvak.
-    df_in_fragility_curves : Optional[pd.DataFrame] | None
+    df_in_fragility_curves : pd.DataFrame | None
         DataFrame: Fragility curves voor het dijkvak.
-    df_out : Optional[pd.DataFrame] | None
+    df_out : pd.DataFrame | None
         DataFrame: Uitvoer.
     input_schema_fragility_curves : ClassVar[dict[str, str]]
         Het invoerschema voor de fragility curves per dijkvak.
@@ -76,9 +76,9 @@ class SectionsMeasureFailureprobability(SectionsTechnicalFailureprobability):
 
     data_adapter: DataAdapter
 
-    df_in_section_loads: Optional[pd.DataFrame] | None = None
-    df_in_fragility_curves: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in_section_loads: pd.DataFrame | None = None
+    df_in_fragility_curves: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     # fragility curve per dijkvak
     input_schema_fragility_curves: ClassVar[dict[str, str]] = {

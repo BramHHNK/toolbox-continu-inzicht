@@ -53,7 +53,7 @@ class CombineFragilityCurvesIndependent(ToolboxBase):
         DataAdapter object
     lst_fragility_curves: list[pd.DataFrame]
         Lijst van fragility curves die worden gecombineerd
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame met de gecombineerde fragility curve
     combine_func: Callable
         Functie die wordt gebruikt om de fragility curves te combineren
@@ -76,7 +76,7 @@ class CombineFragilityCurvesIndependent(ToolboxBase):
 
     data_adapter: DataAdapter
     lst_fragility_curves: list[pd.DataFrame] = field(default_factory=list)
-    df_out: Optional[pd.DataFrame] | None = None
+    df_out: pd.DataFrame | None = None
     combine_func: Callable = combine_independent
     weights: None = None
     fragility_curve_schema: ClassVar[dict[str, str]] = {
@@ -174,7 +174,7 @@ class CombineFragilityCurvesDependent(CombineFragilityCurvesIndependent):
         DataAdapter object
     lst_fragility_curves: list[pd.DataFrame]
         Lijst van fragility curves die worden gecombineerd
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame met de gecombineerde fragility curve
     combine_func: Callable
         Functie die wordt gebruikt om de fragility curves te combineren
@@ -198,7 +198,7 @@ class CombineFragilityCurvesDependent(CombineFragilityCurvesIndependent):
     data_adapter: DataAdapter
 
     lst_fragility_curves: list[pd.DataFrame] = field(default_factory=list)
-    df_out: Optional[pd.DataFrame] | None = None
+    df_out: pd.DataFrame | None = None
     combine_func: Callable = combine_dependent
     weights: None = None
     fragility_curve_schema: ClassVar[dict[str, str]] = {
@@ -219,7 +219,7 @@ class CombineFragilityCurvesWeightedSum(CombineFragilityCurvesIndependent):
         DataAdapter object
     lst_fragility_curves: list[pd.DataFrame]
         Lijst van fragility curves die worden gecombineerd
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         DataFrame met de gecombineerde fragility curve
     combine_func: Callable
         Functie die wordt gebruikt om de fragility curves te combineren
@@ -243,7 +243,7 @@ class CombineFragilityCurvesWeightedSum(CombineFragilityCurvesIndependent):
     data_adapter: DataAdapter
 
     lst_fragility_curves: list[pd.DataFrame] = field(default_factory=list)
-    df_out: Optional[pd.DataFrame] | None = None
+    df_out: pd.DataFrame | None = None
     combine_func: Callable = combine_weighted
     weights: list[float] | None = None
     fragility_curve_schema: ClassVar[dict[str, str]] = {

@@ -22,11 +22,11 @@ class IntegrateFragilityCurve(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         Adapter for handling data input and output operations.
-    df_exceedance_frequency: Optional[pd.DataFrame] | None
+    df_exceedance_frequency: pd.DataFrame | None
         DataFrame containing exceedance frequency data.
-    df_fragility_curve: Optional[pd.DataFrame] | None
+    df_fragility_curve: pd.DataFrame | None
         DataFrame containing fragility curve data.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Output DataFrame containing the integrated fragility curve.
     interp_func: Callable
         Functie waarmee geïnterpoleerd wordt
@@ -41,9 +41,9 @@ class IntegrateFragilityCurve(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_exceedance_frequency: Optional[pd.DataFrame] | None = None
-    df_fragility_curve: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_exceedance_frequency: pd.DataFrame | None = None
+    df_fragility_curve: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
     interp_func: Callable = log_interpolate_1d
 
     def run(self, input: list[str], output: str):
@@ -142,11 +142,11 @@ class IntegrateFragilityCurveMultiple(IntegrateFragilityCurve):
     ----------
     data_adapter: DataAdapter
         Adapter for handling data input and output operations.
-    df_exceedance_frequency: Optional[pd.DataFrame] | None
+    df_exceedance_frequency: pd.DataFrame | None
         DataFrame containing exceedance frequency data.
-    df_fragility_curve: Optional[pd.DataFrame] | None
+    df_fragility_curve: pd.DataFrame | None
         DataFrame containing fragility curve data.
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Output DataFrame containing the integrated fragility curve.
     interp_func: Callable
         Functie waarmee geinterpoleerd wordt
@@ -161,9 +161,9 @@ class IntegrateFragilityCurveMultiple(IntegrateFragilityCurve):
     """
 
     data_adapter: DataAdapter
-    df_exceedance_frequency: Optional[pd.DataFrame] | None = None
-    df_fragility_curve: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_exceedance_frequency: pd.DataFrame | None = None
+    df_fragility_curve: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
     interp_func: Callable = log_interpolate_1d
 
     def run(self, input: list[str], output: str):

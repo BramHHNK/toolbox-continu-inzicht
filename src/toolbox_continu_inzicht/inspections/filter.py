@@ -1,5 +1,3 @@
-from typing import Optional
-
 import pandas as pd
 from pydantic.dataclasses import dataclass
 
@@ -15,9 +13,9 @@ class Filter(ToolboxBase):
     ----------
     data_adapter: DataAdapter
         DataAdapter object
-    df_in: Optional[pd.DataFrame] | None
+    df_in: pd.DataFrame | None
         Input DataFrame om te filteren
-    df_out: Optional[pd.DataFrame] | None
+    df_out: pd.DataFrame | None
         Output DataFrame die gefilterd is.
 
     Notes
@@ -33,8 +31,8 @@ class Filter(ToolboxBase):
     """
 
     data_adapter: DataAdapter
-    df_in: Optional[pd.DataFrame] | None = None
-    df_out: Optional[pd.DataFrame] | None = None
+    df_in: pd.DataFrame | None = None
+    df_out: pd.DataFrame | None = None
 
     def run(self, input: str, output: str):
         """Runt filtering van een input DataAdapter.
