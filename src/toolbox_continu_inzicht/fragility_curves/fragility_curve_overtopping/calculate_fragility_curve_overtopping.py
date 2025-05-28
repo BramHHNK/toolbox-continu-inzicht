@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Tuple
+from typing import Any
 import numpy as np
 import pandas as pd
 
@@ -62,12 +62,12 @@ class WaveOvertoppingCalculation:
         overtopping: object,
         basis_profiel: object,
         qcr: float,
-        richtingen: List[float],
-        bodemhoogte: List[float],
-        strijklengte: List[float],
+        richtingen: list[float],
+        bodemhoogte: list[float],
+        strijklengte: list[float],
         closing_situation: object,
-        options: Dict[str, Any],
-    ) -> Tuple[List[float], List[float]]:
+        options: dict[str, Any],
+    ) -> tuple[list[float], list[float]]:
         """
         Berekent de overloopcurve voor overtopping.
         Parameters:
@@ -86,11 +86,11 @@ class WaveOvertoppingCalculation:
             Het basisprofiel object.
         qcr : float
             De kritieke afvoer.
-        richtingen : List[float]
+        richtingen : list[float]
             De windrichtingen.
-        bodemhoogte : List[float]
+        bodemhoogte : list[float]
             De bodemhoogtes.
-        strijklengte : List[float]
+        strijklengte : list[float]
             De strijklengtes.
         closing_situation : object
             De sluitsituatie.
@@ -99,9 +99,9 @@ class WaveOvertoppingCalculation:
 
         Returns:
         --------
-        niveaus : List[float]
+        niveaus : list[float]
             De niveaus.
-        ovkansqcr : List[float]
+        ovkansqcr : list[float]
             De overloopkansen.
         """
         # Pas profiel aan voor maatregel (via kruinhoogte)
@@ -156,9 +156,9 @@ class WaveOvertoppingCalculation:
         self,
         level: float,
         windspeed: float,
-        richtingen: List[float],
-        bedlevels: List[float],
-        fetches: List[float],
+        richtingen: list[float],
+        bedlevels: list[float],
+        fetches: list[float],
         t_tspec: float,
     ) -> int:
         """
@@ -168,11 +168,11 @@ class WaveOvertoppingCalculation:
             Het waterpeil.
         windspeed : float
             De windsnelheid.
-        richtingen : List[float]
+        richtingen : list[float]
             De array met richtingen.
-        bedlevels : List[float]
+        bedlevels : list[float]
             De array met bodemhoogtes.
-        fetches : List[float]
+        fetches : list[float]
             De array met strijklengtes.
         t_tspec : float
             De spectrale golfperiode.
@@ -209,8 +209,8 @@ class WaveOvertoppingCalculation:
         t_tspec: float,
         crestlevel: float,
         closing_situation: object,
-        options: Dict[str, Any],
-    ) -> Tuple[np.ndarray, np.ndarray]:
+        options: dict[str, Any],
+    ) -> tuple[np.ndarray, np.ndarray]:
         """
         Berekent de overloopcurve voor overtopping.
 
