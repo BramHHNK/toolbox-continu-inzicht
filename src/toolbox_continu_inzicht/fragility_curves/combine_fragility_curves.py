@@ -1,5 +1,6 @@
 from dataclasses import field
-from typing import Callable, ClassVar
+from typing import ClassVar
+from collections.abc import Callable
 
 import numpy as np
 import pandas as pd

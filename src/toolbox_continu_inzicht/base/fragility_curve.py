@@ -1,4 +1,5 @@
-from typing import Callable, ClassVar
+from typing import ClassVar
+from collections.abc import Callable
 import warnings
 
 import numpy as np

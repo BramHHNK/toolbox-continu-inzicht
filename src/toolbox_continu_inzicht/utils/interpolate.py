@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.stats import norm
-from typing import Callable
+from collections.abc import Callable
 
 
 def _interpolate_1d(x, xp, fp):
