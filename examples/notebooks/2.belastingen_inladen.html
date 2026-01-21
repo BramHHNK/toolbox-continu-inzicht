@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -218,6 +218,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../examples/notebooks/5.inspectieresultaten.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inspectieresultaten</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../examples/notebooks/6.fragility_curve_from_cache.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fragility Curve uit een cache</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../examples/notebooks/7.rekentest_flood_scenarios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real-time of what-if overstromingsrisico’s</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -353,10 +365,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="lees-configuratie-in-en-maak-dictionary-base.config-aan">Lees configuratie in en maak dictionary base.Config aan</h3>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> toolbox_continu_inzicht <span class="im">import</span> Config</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>yaml_config_file <span class="op">=</span> <span class="st">"demo_sprint2-I.yaml"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path.cwd() <span class="op">/</span> <span class="st">"data_demo"</span> <span class="op">/</span> yaml_config_file</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>config <span class="op">=</span> Config(config_path<span class="op">=</span>path)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>config.lees_config()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path.cwd() <span class="op">/</span> <span class="st">"data_sets"</span> <span class="op">/</span> <span class="st">"2.belastingen_inladen"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>yaml_config_file <span class="op">=</span> <span class="st">"demo_sprint2-I.yaml"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>config_path <span class="op">=</span> path <span class="op">/</span> yaml_config_file</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>config <span class="op">=</span> Config(config_path<span class="op">=</span>config_path)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>config.lees_config()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="geef-config-mee-aan-base.adapter" class="level3">
 <h3 class="anchored" data-anchor-id="geef-config-mee-aan-base.adapter">Geef config mee aan base.Adapter</h3>
@@ -367,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Globale variabelen: </span><span class="sc">{</span>data<span class="sc">.</span>config<span class="sc">.</span>global_variables<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> data_adapter <span class="kw">in</span> data.config.data_adapters:</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Data apdater: </span><span class="sc">{</span>data_adapter<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Folder met data: D:-continu-inzicht-continu-inzicht_inzicht_demo_sprint2-I.yaml Globale variabelen: {‘rootdir’: ‘data_demo’, ‘moments’: [-24, 0, 24, 48], ‘aquo_alias’: {‘WATHTE [m][NAP][OW]’: ‘WATHTE’}, ‘LoadsWaterinfo’: {‘parameters’: [‘waterhoogte’], ‘MISSING_VALUE’: 999}, ‘LoadsFews’: {‘host’: ‘https://fews.hhnk.nl’, ‘port’: 443, ‘region’: ‘fewspiservice’, ‘version’: ‘1.25’, ‘filter’: ‘HHNK_WEB’, ‘parameters’: [‘WATHTE [m][NAP][OW]’], ‘MISSING_VALUE’: 999}, ‘LoadsMatroos’: {‘website’: ‘noos’, ‘model’: ‘dcsm6_kf’, ‘parameters’: [‘WATHTE’], ‘MISSING_VALUE’: 999}, ‘LoadsWaterwebservicesRWS’: {‘parameters’: [‘WATHTE’], ‘MISSING_VALUE’: 999}, ‘calc_time’: datetime.datetime(2025, 12, 17, 13, 0, tzinfo=datetime.timezone.utc)} Data apdater: default_options Data apdater: BelastingLocaties_WaterInfo Data apdater: Waterstanden_WaterInfo Data apdater: BelastingLocaties_FEWS Data apdater: Waterstanden_FEWS Data apdater: BelastingLocaties_Matroos Data apdater: Waterstanden_Matroos Data apdater: BelastingLocaties_Waterwebservices_RWS Data apdater: Waterstanden_Waterwebservices_RWS</p>
+<p>Folder met data: D:-continu-inzicht-continu-inzicht_inzicht_sets\2.belastingen_inladen_sprint2-I.yaml Globale variabelen: {‘rootdir’: ‘data_sets/2.belastingen_inladen’, ‘moments’: [-24, 0, 24, 48], ‘aquo_alias’: {‘WATHTE [m][NAP][OW]’: ‘WATHTE’}, ‘LoadsWaterinfo’: {‘parameters’: [‘waterhoogte’], ‘MISSING_VALUE’: 999}, ‘LoadsFews’: {‘host’: ‘https://fews.hhnk.nl’, ‘port’: 443, ‘region’: ‘fewspiservice’, ‘version’: ‘1.25’, ‘filter’: ‘HHNK_WEB’, ‘parameters’: [‘WATHTE [m][NAP][OW]’], ‘MISSING_VALUE’: 999}, ‘LoadsMatroos’: {‘website’: ‘noos’, ‘model’: ‘dcsm6_kf’, ‘parameters’: [‘WATHTE’], ‘MISSING_VALUE’: 999}, ‘LoadsWaterwebservicesRWS’: {‘parameters’: [‘WATHTE’], ‘MISSING_VALUE’: 999}, ‘calc_time’: datetime.datetime(2026, 1, 21, 7, 0, tzinfo=datetime.timezone.utc)} Data apdater: default_options Data apdater: BelastingLocaties_WaterInfo Data apdater: Waterstanden_WaterInfo Data apdater: BelastingLocaties_FEWS Data apdater: Waterstanden_FEWS Data apdater: BelastingLocaties_Matroos Data apdater: Waterstanden_Matroos Data apdater: BelastingLocaties_Waterwebservices_RWS Data apdater: Waterstanden_Waterwebservices_RWS</p>
 </section>
 <section id="invoerbestand-csv-met-data-van-belastinglocaties" class="level3">
 <h3 class="anchored" data-anchor-id="invoerbestand-csv-met-data-van-belastinglocaties">Invoerbestand (CSV) met data van belastinglocaties</h3>
@@ -377,7 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 1;Pannerdense-kop(PANN);Pannerdense kop;WaterInfo;false\
 2;MPN-N-24;Meetpunt Spijkerboor;FEWS;false\
 3;hoekvanholland;Hoek van Holland;NOOS Matroos;true\
-4;9889;Hintham beneden;RWS Waterwebservices;false</code></pre>
+4;3450;rosmalen.hinthamsluis.boven;RWS Waterwebservices;false</code></pre>
 </section>
 <section id="laad-module-functie-loadswaterinfo-voor-inlezen-belastingen-uit-rws-waterinfo" class="level3">
 <h3 class="anchored" data-anchor-id="laad-module-functie-loadswaterinfo-voor-inlezen-belastingen-uit-rws-waterinfo">Laad module (functie) LoadsWaterinfo voor inlezen belastingen uit RWS Waterinfo</h3>
@@ -449,8 +462,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte Oppervlaktewater t.o.v. Normaal Am...</td>
 <td>cm</td>
-<td>2025-12-16 13:00:00+00:00</td>
-<td>884.0</td>
+<td>2026-01-20 07:00:00+00:00</td>
+<td>869.0</td>
 <td>meting</td>
 </tr>
 <tr class="even">
@@ -462,8 +475,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte Oppervlaktewater t.o.v. Normaal Am...</td>
 <td>cm</td>
-<td>2025-12-16 13:10:00+00:00</td>
-<td>884.0</td>
+<td>2026-01-20 07:10:00+00:00</td>
+<td>868.0</td>
 <td>meting</td>
 </tr>
 <tr class="odd">
@@ -475,8 +488,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte Oppervlaktewater t.o.v. Normaal Am...</td>
 <td>cm</td>
-<td>2025-12-16 13:20:00+00:00</td>
-<td>884.0</td>
+<td>2026-01-20 07:20:00+00:00</td>
+<td>869.0</td>
 <td>meting</td>
 </tr>
 <tr class="even">
@@ -488,8 +501,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte Oppervlaktewater t.o.v. Normaal Am...</td>
 <td>cm</td>
-<td>2025-12-16 13:30:00+00:00</td>
-<td>884.0</td>
+<td>2026-01-20 07:30:00+00:00</td>
+<td>869.0</td>
 <td>meting</td>
 </tr>
 <tr class="odd">
@@ -501,8 +514,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte Oppervlaktewater t.o.v. Normaal Am...</td>
 <td>cm</td>
-<td>2025-12-16 13:40:00+00:00</td>
-<td>884.0</td>
+<td>2026-01-20 07:40:00+00:00</td>
+<td>870.0</td>
 <td>meting</td>
 </tr>
 <tr class="even">
@@ -527,8 +540,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte verwacht Oppervlaktewater t.o.v. N...</td>
 <td>cm</td>
-<td>2025-12-19 04:20:00+00:00</td>
-<td>851.0</td>
+<td>2026-01-23 04:20:00+00:00</td>
+<td>829.0</td>
 <td>verwachting</td>
 </tr>
 <tr class="even">
@@ -540,8 +553,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte verwacht Oppervlaktewater t.o.v. N...</td>
 <td>cm</td>
-<td>2025-12-19 04:30:00+00:00</td>
-<td>851.0</td>
+<td>2026-01-23 04:30:00+00:00</td>
+<td>829.0</td>
 <td>verwachting</td>
 </tr>
 <tr class="odd">
@@ -553,8 +566,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte verwacht Oppervlaktewater t.o.v. N...</td>
 <td>cm</td>
-<td>2025-12-19 04:40:00+00:00</td>
-<td>851.0</td>
+<td>2026-01-23 04:40:00+00:00</td>
+<td>829.0</td>
 <td>verwachting</td>
 </tr>
 <tr class="even">
@@ -566,8 +579,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte verwacht Oppervlaktewater t.o.v. N...</td>
 <td>cm</td>
-<td>2025-12-19 04:50:00+00:00</td>
-<td>851.0</td>
+<td>2026-01-23 04:50:00+00:00</td>
+<td>829.0</td>
 <td>verwachting</td>
 </tr>
 <tr class="odd">
@@ -579,8 +592,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>WATHTE</td>
 <td>Waterhoogte verwacht Oppervlaktewater t.o.v. N...</td>
 <td>cm</td>
-<td>2025-12-19 05:00:00+00:00</td>
-<td>851.0</td>
+<td>2026-01-23 05:00:00+00:00</td>
+<td>829.0</td>
 <td>verwachting</td>
 </tr>
 </tbody>
@@ -676,20 +689,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
 <th data-quarto-table-cell-role="th">measurement_location_id</th>
-<th data-quarto-table-cell-role="th">measurement_location_code</th>
 <th data-quarto-table-cell-role="th">measurement_location_description</th>
 <th data-quarto-table-cell-role="th">source</th>
 <th data-quarto-table-cell-role="th">tide</th>
+<th data-quarto-table-cell-role="th">measurement_location_code_name</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">measurement_location_code</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">3</td>
+<td data-quarto-table-cell-role="th">3450</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
 <td>RWS Waterwebservices</td>
 <td>False</td>
+<td>rosmalen.hinthamsluis.boven</td>
 </tr>
 </tbody>
 </table>
@@ -719,61 +740,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-16 14:00:00+01:00</td>
+<td>2026-01-20 08:00:00+01:00</td>
 <td>cm</td>
-<td>202.0</td>
+<td>469.0</td>
 <td>meting</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-16 14:10:00+01:00</td>
+<td>2026-01-20 08:10:00+01:00</td>
 <td>cm</td>
-<td>203.0</td>
+<td>471.0</td>
 <td>meting</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-16 14:20:00+01:00</td>
+<td>2026-01-20 08:20:00+01:00</td>
 <td>cm</td>
-<td>204.0</td>
+<td>467.0</td>
 <td>meting</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-16 14:30:00+01:00</td>
+<td>2026-01-20 08:30:00+01:00</td>
 <td>cm</td>
-<td>203.0</td>
+<td>467.0</td>
 <td>meting</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-16 14:40:00+01:00</td>
+<td>2026-01-20 08:40:00+01:00</td>
 <td>cm</td>
-<td>202.0</td>
+<td>471.0</td>
 <td>meting</td>
 </tr>
 <tr class="even">
@@ -791,61 +812,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td data-quarto-table-cell-role="th">143</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-17 13:50:00+01:00</td>
+<td>2026-01-21 07:50:00+01:00</td>
 <td>cm</td>
-<td>201.0</td>
+<td>465.0</td>
 <td>meting</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">144</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-17 14:00:00+01:00</td>
+<td>2026-01-21 08:00:00+01:00</td>
 <td>cm</td>
-<td>204.0</td>
+<td>468.0</td>
 <td>meting</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-17 14:10:00+01:00</td>
+<td>2026-01-21 08:10:00+01:00</td>
 <td>cm</td>
-<td>203.0</td>
+<td>474.0</td>
 <td>verwachting</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-17 14:20:00+01:00</td>
+<td>2026-01-21 08:20:00+01:00</td>
 <td>cm</td>
-<td>203.0</td>
+<td>464.0</td>
 <td>verwachting</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>4</td>
-<td>9889</td>
-<td>Hintham beneden</td>
+<td>rosmalen.hinthamsluis.boven</td>
+<td>Rosmalen Hinthamsluis boven</td>
 <td>4724</td>
 <td>WATHTE</td>
-<td>2025-12-17 14:30:00+01:00</td>
+<td>2026-01-21 08:30:00+01:00</td>
 <td>cm</td>
-<td>201.0</td>
+<td>464.0</td>
 <td>verwachting</td>
 </tr>
 </tbody>
